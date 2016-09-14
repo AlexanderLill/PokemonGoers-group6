@@ -1,0 +1,30 @@
+html.onedoesnotsimply body {
+  background:url("pictures/one-does-not-simply.jpg");
+  background-position:center;
+  background-size: 100%;
+}
+
+html.fixallthebugs body {
+  background:url("pictures/all-the-things.jpg");
+  background-position:center;
+  background-size: 100%;
+}
+
+p.top-caption {
+	font-size: 2.5em;
+	white-space: nowrap;
+	text-align: center;
+	vertical-align: top;
+	font-weight: 900;
+
+	color: black;
+	-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
+}
+
+.fragmented-section {
+	width: 100%;
+	height: 100%;
+	top: 0 !important;
+}
