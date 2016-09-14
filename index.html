@@ -26,13 +26,29 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<style>
+			.reveal section span.date {
+				display: inline-block;
+				background: #999;
+				color: black;
+				padding: 2px 7px;
+				border-radius: 5px;
+			}
+
+			.reveal section img.no-border {
+				background:none;
+				border:none;
+				box-shadow:none;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -71,7 +87,59 @@
 				</section>
 
 				<section>
-					Node intro (Josef, 5min)
+					<section>
+						<h2>Node.js</h2>
+						<p>How did Node.js come to be?</p>
+						<img class="no-border" width="600" data-src="pictures/nodejs.png" alt="Node.js logo">
+					</section>
+
+					<section>
+						<p>
+							<span class="date">November 8th 2009</span><br>
+							Ryan Dahl introduces Node.js to the world at JSConf.eu
+						</p>
+						<img width="200" data-src="pictures/ryan-dahl.jpg" alt="Ryan Dahl">
+					</section>
+
+					<section>
+						Ryan Dahl summarizes Node.js as follows
+						<ul>
+							<li class="fragment">Server-side JavaScript</li>
+							<li class="fragment">Build on Google's V8</li>
+							<li class="fragment">Evented, non-blocking I/O</li>
+							<li class="fragment">CommonJS module system</li>
+							<li class="fragment">8000+ lines of C/C++, 2000 lines of JavaScript</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>
+							<span class="date">January 12th 2010</span><br>
+						  Isaac Schlueter releases NPM, a package manager for Node.js
+						</p>
+						<img class="no-border" width="500" data-src="pictures/npm.svg" alt="NPM logo">
+					</section>
+
+					<section>
+						<p>
+							<span class="date">July 2011</span><br>
+						  Release of first Node.js version running on Windows
+						</p>
+						<img class="no-border" width="300" data-src="pictures/windows.svg" alt="Windows logo">
+					</section>
+
+					<section>
+						<p>
+						  <span class="date">November 25th 2011</span><br>
+							Node ships with NPM since version 0.6.3
+						</p>
+						<img class="no-border" width="300" data-src="pictures/npm.svg" alt="NPM logo">
+						<img class="no-border" width="300" data-src="pictures/nodejs.png" alt="Node.js logo">
+					</section>
+
+					<section>
+						io.js and more...
+					</section>
 				</section>
 
 				<section>
