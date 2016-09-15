@@ -100,7 +100,7 @@
 
           <section>
             <p>
-              <span class="date">November 8th 2009</span><br>
+              <span class="date">November 8th 2009</span><br><br>
               Ryan Dahl introduces Node.js to the world at JSConf.eu
             </p>
             <img width="200" data-src="pictures/ryan-dahl.jpg" alt="Ryan Dahl">
@@ -119,7 +119,7 @@
 
           <section>
             <p>
-              <span class="date">January 12th 2010</span><br>
+              <span class="date">January 12th 2010</span><br><br>
               Isaac Schlueter releases NPM, a package manager for Node.js
             </p>
             <img class="no-border" width="500" data-src="pictures/npm.svg" alt="NPM logo">
@@ -127,7 +127,7 @@
 
           <section>
             <p>
-              <span class="date">November 10th 2010</span><br>
+              <span class="date">November 10th 2010</span><br><br>
               Copyright of Node.js is passed to the company Joyent.
             </p>
             <img class="no-border" width="500" data-src="pictures/joyent-white.png" alt="Joyent logo">
@@ -135,7 +135,7 @@
 
           <section>
             <p>
-              <span class="date">July 2011</span><br>
+              <span class="date">July 2011</span><br><br>
               Release of first Node.js version running on Windows
             </p>
             <img class="no-border" width="300" data-src="pictures/windows.svg" alt="Windows logo">
@@ -143,7 +143,7 @@
 
           <section>
             <p>
-              <span class="date">November 25th 2011</span><br>
+              <span class="date">November 25th 2011</span><br><br>
               Node ships with NPM since version 0.6.3
             </p>
             <img class="no-border" width="300" data-src="pictures/npm.svg" alt="NPM logo">
@@ -152,9 +152,10 @@
 
           <section>
             <p>
-              <span class="date">December 2014</span><br>
+              <span class="date">December 2014</span><br><br>
               The Node.js fork io.js is created
-
+							<br>
+							<span style="font-size: 0.7em">Fedor Indutny created the fork and many contributers joined him</span>
               <br>
               <img class="no-border" width="180" data-src="pictures/iojs-white.png" alt="io.js logo">
 
@@ -167,7 +168,7 @@
 
           <section>
             <p>
-              <span class="date">September 14th 2015</span><br>
+              <span class="date">September 14th 2015</span><br><br>
               Node version 4.0.0 is released under the direction of the newly formed Node.js Foundation
             </p>
             <img class="no-border" width="180" data-src="pictures/iojs-white.png" alt="io.js logo">
@@ -175,7 +176,7 @@
           </section>
 
           <section>
-						<span class="date">Now</span><br>
+						<span class="date">Now</span><br><br>
             <ul>
               <li>Regular releases (1-2 per month)</li>
               <li>Swift decisions through Technical Steering Committe</li>
@@ -186,7 +187,7 @@
 
 						<img class="no-border" width="400" data-src="pictures/nodejs-logo-white.png" alt="Node.js logo"><br>
 
-					  A Healthy open source project
+					  A healthy open source project
           </section>
 
           <section>
@@ -317,8 +318,14 @@ const person = { name, age } // Nice and short
 						<span class="unobstrusive-text">6 of 6</span>
 						<h2>Destructuring Assignment</h2>
 						<pre><code class="hljs" data-trim>
-function processPerson ({ name, age }) { // Takes "options" object
-  if (age >= 18) { console.log(`${name} may drink alcohol`) }
+// Old
+function processPerson (options) {
+  console.log(options.name, options.age)
+}
+
+// New
+function processPerson ({ name, age }) {
+  console.log(name, age)
 }
 						</code></pre>
 						Very useful for "options" parameter
