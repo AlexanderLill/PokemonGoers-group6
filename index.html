@@ -51,30 +51,15 @@
         </section>
 
         <section>
-          <h2>Catch 'em all</h2>
-        </section>
-
-        <section data-state="fixallthebugs">
-          <section class="fragmented-section">
-            <div>
-              <p class="top-caption">ASSEMBLE ALL THE THINGS</p>
-            </div>
-          </section>
-        </section>
-
-        <section data-state="onedoesnotsimply">
-          <section class="fragmented-section">
-            <div>
-              <p class="top-caption">ONE DOES NOT SIMPLY</br>ASSEMBLE ALL THE THINGS</p>
-            </div>
-          </section>
-        </section>
-
-        <section>
           <section>
             <h2>Node.js</h2>
-            <p>How did Node.js come to be?</p>
+            <p>What is it?</p>
             <img class="no-border" width="600" data-src="pictures/nodejs-logo-white.png" alt="Node.js logo">
+            <br>API, ... Atom... clientside javascript
+          </section>
+
+          <section>
+            <p>How did Node.js come to be?</p>
           </section>
 
           <section>
@@ -99,9 +84,9 @@
           <section>
             <p>
               <span class="date">January 12th 2010</span><br><br>
-              Isaac Schlueter releases NPM, a package manager for Node.js
+              Isaac Schlueter releases NPM,<br>a package manager for Node.js
             </p>
-            <img class="no-border" width="500" data-src="pictures/npm.svg" alt="NPM logo">
+            <img class="no-border" width="500" data-src="pictures/npm-logo.svg" alt="NPM logo">
           </section>
 
           <section>
@@ -125,7 +110,7 @@
               <span class="date">November 25th 2011</span><br><br>
               Node ships with NPM since version 0.6.3
             </p>
-            <img class="no-border" width="300" data-src="pictures/npm.svg" alt="NPM logo">
+            <img class="no-border" width="300" data-src="pictures/npm-logo.svg" alt="NPM logo">
             <img class="no-border" width="300" data-src="pictures/nodejs-logo-white.png" alt="Node.js logo">
           </section>
 
@@ -183,14 +168,104 @@
         </section>
 
         <section>
-          npm intro (Alex, 8min)
 
           <section>
-            (locally vs globally installed packages), modules (file)
+            <img class="no-border" width="600" data-src="pictures/npm-logo.svg" alt="NPM logo">
+            <br>
+            <h2>NPM</h2>
+            <br>
+            a quick introduction
+          </section>
+
+          <!--npm intro (Alex, 8min)-->
+
+          <section>
+
+            <img class="no-border" width="300" data-src="pictures/npm-logo.svg" alt="NPM logo">
+            <br>
+            <h2>Package Manager</h2>
+            <br><br>
+            <ul>
+              <li>Included in node.js</li>
+              <li>Entirely written in JavaScript</li>
+              <li>Command line interface</li>
+            </ul>
           </section>
 
           <section>
-            npm scripts (start, test, etc...)
+            <h2>Usage</h2>
+            <pre><code class="Bash">
+npm install &lt;packagename&gt;
+            </code></pre>
+          </section>
+
+          <section>
+           <h2>Local VS global</h2>
+            <pre><code class="Bash">
+              npm install &lt;packagename&gt;
+            </code></pre>
+            Installs to e.g. `./node_modules`
+            <pre><code class="Bash">
+              npm install -g &lt;packagename&gt;
+            </code></pre> 
+            Installs to e.g. `/usr/local/lib/node_modules`
+          </section>     
+
+          <section data-markdown>
+            From the man page `npm-folders`:
+            - Install locally if you're going to require() it.
+            - Install globally if you're going to run it
+              on the command line.
+          </section>
+
+          <section>
+            <h2>Usage</h2>
+            <pre><code class="Bash">
+npm install --save &lt;packagename&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <span data-markdown>
+              `packages.json`
+            </span>
+            <pre><code class="hljs">
+{
+  "name": "Catch-em-all",
+  "version": "0.0.0",
+  "description": "Project E of JavaScript Seminar at TU Munich",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.0"
+  }
+}
+            </code></pre> 
+          </section>
+
+          <section>
+            <h2>Automation</h2>
+            <pre><code class="Bash">
+              npm start; npm stop; npm restart; npm test
+            </code></pre> 
+            
+            Can be defined in <span data-markdown>`packages.json`</span>
+          </section>
+
+          <section>
+            <span data-markdown>
+              `packages.json`
+            </span>
+            <pre><code class="hljs">
+{
+  ...
+  "scripts": {
+    "start": "node lib/main",
+    "test": "node tests/main && standard"
+  },
+  ...
+}
+            </code></pre> 
           </section>
 
           <section>
@@ -202,11 +277,11 @@
           </section>
 
           <section>
-            require ... (relative paths, w/o dot = package name)
+            
           </section>
 
           <section>
-            Codeexamples for npm scripts? require?
+            Codeexamples for npm scripts?
           </section>
 
         </section>
@@ -484,7 +559,7 @@ function inviteToParty (name = 'Max Mustermann') {
 
             - `npm install grunt`
             - `npm install gulp`
-            - `npm install brocolli`
+            - `npm install broccoli`
 
             To transpile, concatenate, minimize, lint, obfuscate, etc.
           </section>
@@ -506,7 +581,31 @@ function inviteToParty (name = 'Max Mustermann') {
         </section>
 
         <section>
-          <h2>Q &amp; A</h2>
+          <!--Q&amp;A (3min)-->
+          <h3>Questions and Answers</h3>
+          <br>
+          <br>
+          <span class="unobstrusive-text">Next: Project presentation</span>
+        </section>
+
+        <section>
+          <h2>Catch 'em all</h2>
+        </section>
+
+        <section data-state="fixallthebugs">
+          <section class="fragmented-section">
+            <div>
+              <p class="top-caption">ASSEMBLE ALL THE THINGS</p>
+            </div>
+          </section>
+        </section>
+
+        <section data-state="onedoesnotsimply">
+          <section class="fragmented-section">
+            <div>
+              <p class="top-caption">ONE DOES NOT SIMPLY</br>ASSEMBLE ALL THE THINGS</p>
+            </div>
+          </section>
         </section>
 
         <section>
