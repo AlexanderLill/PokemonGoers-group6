@@ -48,7 +48,7 @@ p.top-caption {
   font-size: 0.7em;
 }
 
-.reveal section .code-snippet {
+.reveal section code {
   display: inline-block;
   padding: 0 6px;
   margin: 2px;

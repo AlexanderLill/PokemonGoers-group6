@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js – The HTML Presentation Framework</title>
+    <title>Server-side programming with Node.js</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="description" content="JavaScript Seminar Winter 2016">
     <meta name="author" content="Hakim El Hattab">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -276,7 +276,7 @@ let studentNames = students.map(function (s) { return s.name })
 let studentNames = students.map(s => s.name)
             </code></pre>
 
-            Useful: They preserve the outer <span class="code-snippet">this</span>
+            Useful: They preserve the outer <code>this</code>
           </section>
 
           <section>
@@ -322,7 +322,7 @@ function processPerson ({ name, age }) {
   console.log(name, age)
 }
             </code></pre>
-            Very useful for a <span class="code-snippet">options</span> parameter
+            Very useful for a <code>options</code> parameter
           </section>
 
 					<section>
@@ -347,82 +347,78 @@ function inviteToParty (name = 'Max Mustermann') {
         </section>
 
         <section>
-          <section>
-            <h2>Unit Testing with Mocha</h2>
-            <ul>
-              <li>It's good practice</li>
-              <li>It's common practice</li>
-              <li>It's easy</li>
-            </ul>
+          <section data-markdown>
+            ## Unit Testing with Mocha</h2>
+
+            - It's good practice
+            - It's common practice
+            - It's easy
           </section>
 
-          <section>
-            <h2>Terminology</h2>
+          <section data-markdown>
+            ## Terminology
 
-            <ul>
-              <li><em>Testing framework</em>, e.g. <span class="code-snippet">mocha</span></li>
-              <li><em>Assertion library</em>, e.g. <span class="code-snippet">chai</span></li>
-            </ul>
+            - **Testing framework**, e.g. `mocha`
+            - **Assertion library**, e.g. `chai`
           </section>
 
-          <section>
-            <span class="code-snippet">npm install --save mocha chai</span>
+          <section data-markdown>
+            `npm install --save mocha chai`
           </section>
 
-          <section>
-            <span class="code-snippet">package.json</span>
+          <section data-markdown>
+            `package.json`
+            ```JS
+            {
+              "name": "testing-demo",
+              "scripts": {
+                "test": "mocha test/**/*.js" // Add this
+              },
+              "dependencies": {
+                "chai": "^3.5.0",
+                "mocha": "^3.0.2"
+              }
+            }
+            ```
+          </section>
 
-            <pre><code class="hljs" data-trim>
-{
-  "name": "testing-demo",
-  "scripts": {
-    "test": "mocha test/**/*.js" // Add this
-  },
-  "dependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.0.2"
-  }
-}
+          <section data-markdown>
+            `lib/hello-world.js`
+            ```JS
+            module.exports = function () {
+              return 'hello world!'
+            }
+            ```
+
+            `test/hello-world.js`
+            ```JS
+            const helloWorld = require('../lib/hello-world')
+            require('chai').should() // Chai
+
+            describe('helloWorld()', function () { // Mocha
+              it('returns "hello world!"', () => { // Mocha
+                helloWorld().should.equal('hello world!') // Chai
+              })
+            })
+            ```
             </code></pre>
           </section>
 
-          <section>
-            <span class="code-snippet">lib/hello-world.js</span>
-
-            <pre><code class="hljs" data-trim>
-module.exports = function () {
-  return 'hello world!'
-}
-            </code></pre>
-
-            <span class="code-snippet">test/hello-world.js</span>
-
-            <pre><code class="hljs" data-trim>
-const helloWorld = require('../lib/hello-world')
-require('chai').should() // Chai
-
-describe('helloWorld()', function () { // Mocha
-  it('returns "hello world!"', () => { // Mocha
-    helloWorld().should.equal('hello world!') // Chai
-  })
-})
-            </code></pre>
+          <section data-markdown>
+            `npm test`
           </section>
 
-          <section>
-            <span class="code-snippet">npm test</span>
+          <section data-background-video="pictures/testing.mp4"
+                   data-background-video-loop="true"
+                   data-background-color="#000000">
           </section>
 
-          <section data-background-video="pictures/testing.mp4" data-background-color="#000000">
-          </section>
+          <section data-markdown>
+            Recommendation:<div style="width: 20px; height: 20px; background: blue;"></div>
+            Create your tests **during** development
 
-          <section>
-            Recommendation:<br>
-            Create your tests <em>during</em> development<br><br>
-            <ul>
-              <li>Not before: Things might change</li>
-              <li>Not after: Already useful during development</li>
-            </ul>
+            - Not before: Things might change
+            - Not after: Already useful during development
           </section>
         </section>
 
