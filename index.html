@@ -423,11 +423,82 @@ function inviteToParty (name = 'Max Mustermann') {
         </section>
 
         <section>
-          mention highlevel common packages
+          <section data-markdown>
+            ## Useful NPM Packages
+          </section>
+
+          <section data-markdown>
+            ### Testing
+
+            - `npm install mocha chai`
+            - `npm install jasmine-node`
+          </section>
+
+          <section data-markdown>
+            ### Style checking
+
+            Drop-in linting rules to ensure a consistent code style
+
+            - `npm install standard` (without semicolons)
+            - `npm install semistandard` (with semicolons)
+          </section>
+
+          <section data-markdown>
+            ### Utilities
+
+            - `npm i lodash` for various utility functions
+            - `npm i request` to perform HTTP requests
+            - `npm i fs-promise` Node's `fs` module promisified
+          </section>
+
+          <section data-markdown>
+            ### Read and Write Excel files
+
+            `npm install xlsx`
+
+            ```JS
+            const XLSX = require('xlsx')
+            const workbook = XLSX.readFile('test.xlsx')
+            ...
+            ```
+
+            Process Excel data with JavaScript :)
+          </section>
+
+          <section data-markdown>
+            ### Web Framework
+
+            `npm install express`
+
+            ```JS
+            const express = require('express');
+            const app = express();
+            app.listen(3000);
+            ```
+
+            More about `express` in the presentation by group 7
+          </section>
+
+          <section data-markdown>
+            ### Build Tools
+
+            - `npm install grunt`
+            - `npm install gulp`
+            - `npm install brocolli`
+
+            To transpile, concatenate, minimize, lint, obfuscate, etc.
+          </section>
+
+          <section data-markdown>
+            ### Databases
+
+            - `npm i mongoose` (MongoDB)
+            - `npm i bookshelf` (PostgreSQL, MySQL, SQLite3)
+          </section>
         </section>
 
         <section>
-          Q&amp;A (3min)
+          <h2>Q &amp; A</h2>
         </section>
 
         <section>
