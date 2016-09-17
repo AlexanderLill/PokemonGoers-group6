@@ -168,6 +168,85 @@
         </section>
 
         <section>
+          <section>
+            <h2>Node.JS Module Pattern</h2>
+            An introduction to coding node.js<br>
+            <img class="no-border" width="400" data-src="pictures/commonjs_logo.png" alt="CommonJS logo">
+          </section>
+          <section>
+            <h2>CommonJS</h2>
+            <ul>
+              <li class="fragment">optimized for server-side environments</li>
+              <li class="fragment">limit each file to exactly one module <br>
+                <ul>
+                  <li class="fragment">each module can be authored individually<br>
+                  &#8594; increases team scalability</li>
+                  <li class="fragment">each module can be debugged independently<br>
+                  &#8594; decreases testing costs</li>
+                  <li class="fragment">each module's scope and context can be controlled<br>
+                  &#8594; isolate the modules</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <span class="unobstrusive-text">1 of 3</span>
+            <h2>Require</h2>
+            <pre><code class="hljs" data-trim>
+//hello.js
+console.log('Hello world');
+            </code></pre>
+            <pre><code class="hljs" data-trim>
+//app.js
+require('./hello.js');
+//Console: 'Hello world'
+            </code></pre>
+          </section>
+          <section>
+            <span class="unobstrusive-text">2 of 3</span>
+            <h2>Exports</h2>
+            <pre><code class="hljs" data-trim>
+//hello.js
+exports.hello=function(){
+  console.log('Hello');
+}
+exports.world=function(){
+  console.log('world');
+}
+            </code></pre>
+            <pre><code class="hljs" data-trim>
+//app.js
+const hello=require ('./hello.js');
+hello.hello()
+hello.world()
+//Console: 'Hello'
+//Console: 'world'
+            </code></pre>
+          </section>
+          <section>
+            <span class="unobstrusive-text">3 of 3</span>
+            <h2>Module</h2>
+            <pre><code class="hljs" data-trim>
+//hello.js
+hello=function(){
+  console.log(module.id);
+}
+exports.world=function(){
+  console.log('world');
+}
+module.exports=hello;
+            </code></pre>
+            <pre><code class="hljs" data-trim>
+//app.js
+const hello=require ('./hello.js');
+hello()
+//hello.world() would lead to an error
+//Console: '/home/phil/Documents/Test_JS/hello.js'
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
 
           <section>
             <img class="no-border" width="600" data-src="pictures/npm-logo.svg" alt="NPM logo">
@@ -207,9 +286,9 @@ npm install &lt;packagename&gt;
             Installs to e.g. `./node_modules`
             <pre><code class="Bash">
               npm install -g &lt;packagename&gt;
-            </code></pre> 
+            </code></pre>
             Installs to e.g. `/usr/local/lib/node_modules`
-          </section>     
+          </section>
 
           <section data-markdown>
             From the man page `npm-folders`:
@@ -240,15 +319,15 @@ npm install --save &lt;packagename&gt;
     "express-http-proxy": "^0.10.0"
   }
 }
-            </code></pre> 
+            </code></pre>
           </section>
 
           <section>
             <h2>Automation</h2>
             <pre><code class="Bash">
               npm start; npm stop; npm restart; npm test
-            </code></pre> 
-            
+            </code></pre>
+
             Can be defined in <span data-markdown>`packages.json`</span>
           </section>
 
@@ -265,7 +344,7 @@ npm install --save &lt;packagename&gt;
   },
   ...
 }
-            </code></pre> 
+            </code></pre>
           </section>
 
           <section>
@@ -277,7 +356,7 @@ npm install --save &lt;packagename&gt;
           </section>
 
           <section>
-            
+
           </section>
 
           <section>
