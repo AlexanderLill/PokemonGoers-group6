@@ -48,6 +48,11 @@ p.top-caption {
   font-size: 0.7em;
 }
 
+.reveal section .notsounobstrusive-text {
+  color: lightgray;
+  font-size: 1em;
+}
+
 .reveal section code {
   padding: 0 6px;
   background-color: white;
@@ -75,4 +80,50 @@ body {
 
 .hljs-comment {
   color: #444 !important;
+}
+
+.schedule {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.schedule table {
+  background-color: #999;
+  border-radius: 10px;
+  margin: 0;
+  width: 400px;
+  overflow: hidden;
+}
+
+.schedule table th {
+  background-color: #555;
+}
+
+.schedule table td,
+.schedule table th {
+  text-align: center;
+  border-width: 0;
+}
+
+.schedule table tr:not(:last-child) {
+  border-bottom: 4px solid #555;
+}
+
+.screens {
+  display: flex;
+  text-align: left;
+}
+
+.screens > div {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal section .screens img,
+.reveal section .screens video {
+  width: 325px;
+  border: none;
 }
