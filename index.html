@@ -236,10 +236,7 @@
           <section>
             <span class="unobstrusive-text">2 of 6</span>
             <div data-markdown>
-              Quiz: Which one prints?
-              ```JS
-              // Logs 'Hello'
-              ```
+              Quiz: Which one prints 'Hello'?
             </div>
             <div style="display: flex;">
               <div style="flex: 1;" data-markdown>
@@ -320,6 +317,58 @@
           <section>
             <span class="unobstrusive-text">4 of 6</span>
             <div data-markdown>
+              Quiz: What is missing?
+
+              `hello.js`
+              ```JS
+              exports.one = function () {
+                console.log('One')
+              }
+              const two = 'Two'
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()
+              console.log(hello.two)
+              ```
+            </div>
+            <div data-markdown>
+              ```JS
+              // Logs 'One'
+              // Logs 'undefined'
+              ```
+            </div>
+          </section>
+          <section>
+            <span class="unobstrusive-text">5 of 6</span>
+            <div data-markdown>
+              What is missing? (2)
+
+              `hello.js`
+              ```JS
+              exports.one = function () {
+                console.log('One')
+              }
+              exports.two = 'Two'
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()
+              console.log(hello.two)
+              ```
+            </div>
+            <div class="fragment" data-markdown>
+              ```JS
+              // Logs 'One'
+              // Logs 'Two'
+              ```
+            </div>
+          </section>
+          <section>
+            <span class="unobstrusive-text">6 of 6</span>
+            <div data-markdown>
               `module`
 
               `hello.js`
@@ -338,58 +387,6 @@
             </div>
           </section>
           <section>
-            <span class="unobstrusive-text">5 of 6</span>
-            <div data-markdown>
-              Quiz: What is printed?
-
-              `hello.js`
-              ```JS
-              module.exports.one = function () {
-                console.log('One')
-              }
-              const two = 'Two'
-              ```
-              `app.js`
-              ```JS
-              const hello = require('./hello.js')
-              hello.one()
-              console.log(hello.two)
-              ```
-            </div>
-            <div class="fragment" data-markdown>
-              ```JS
-              // Logs 'One'
-              // Logs 'undefined'
-              ```
-            </div>
-          </section>
-          <section>
-            <span class="unobstrusive-text">6 of 6</span>
-            <div data-markdown>
-              Quiz: What is printed?
-
-              `hello.js`
-              ```JS
-              exports.one = function () {
-                console.log('One')
-              }
-              module.exports.two = 'Two'
-              ```
-              `app.js`
-              ```JS
-              const hello = require('./hello.js')
-              hello.one()
-              console.log(hello.two)
-              ```
-            </div>
-            <div class="fragment" data-markdown>
-              ```JS
-              // Logs 'One'
-              // Logs 'Two'
-              ```
-            </div>
-          </section>
-          <section>
             <div data-markdown>
 What is the difference between
 
@@ -402,6 +399,24 @@ What is the difference between
                 console.log(module.exports === exports) // Logs 'true'
                 ```
               </div>
+            </div>
+          </section>
+          <section>
+            <div data-markdown>
+              `module.exports` - single export
+
+              `hello.js`
+              ```JS
+              one = function () {
+                console.log('One')
+              }
+              module.exports = one
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello()             // Logs 'One'
+              ```
             </div>
           </section>
           <section>
