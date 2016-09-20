@@ -65,3 +65,14 @@ body {
   background-size: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('pictures/background.jpg');
 }
+
+.reveal .slide-number {
+  left: 8px;
+  right: auto;
+  font-size: 70%;
+  border-radius: 5px;
+}
+
+.hljs-comment {
+  color: #444 !important;
+}

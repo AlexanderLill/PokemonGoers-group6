@@ -238,38 +238,46 @@
             <div data-markdown>
               Quiz: Which one prints?
               ```JS
-              // Logs 'Hi'
+              // Logs 'Hello'
               ```
             </div>
             <div style="display: flex;">
               <div style="flex: 1;" data-markdown>
               `hello.js`
               ```JS
-              console.log('Hi')
-              ```
-              `app.js`
-              ```JS
-              require('./hello.js')
+              console.log('Hello')
               ```
               </div>
               <div style="flex: 1;" data-markdown>
               `hello.js`
               ```JS
-              console.log('Hi')
-              ```
-              `app.js`
-              ```JS
-              require('./hello.js')
-              require('./hello.js')
+              console.log('Hello')
               ```
               </div>
               <div style="flex: 1;" data-markdown>
               `hello.js`
               ```JS
               main = function () {
-                console.log('Hi')
+                console.log('Hello')
               }
               ```
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div style="flex: 1;" data-markdown>
+              `app.js`
+              ```JS
+              require('./hello.js')
+              ```
+              </div>
+              <div style="flex: 1;" data-markdown>
+              `app.js`
+              ```JS
+              require('./hello.js')
+              require('./hello.js')
+              ```
+              </div>
+              <div style="flex: 1;" data-markdown>
               `app.js`
               ```JS
               require('./hello.js')
