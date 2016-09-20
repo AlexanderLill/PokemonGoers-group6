@@ -49,10 +49,19 @@ p.top-caption {
 }
 
 .reveal section code {
-  display: inline-block;
   padding: 0 6px;
-  margin: 2px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: white;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: black;
   border-radius: 5px;
+}
+
+.reveal section code.hljs {
+  padding: 15px 10px;
+  font-size: 95%;
+}
+
+body {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('pictures/background.jpg');
 }

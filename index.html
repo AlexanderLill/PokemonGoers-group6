@@ -15,11 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="presentation.css">
     <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="presentation.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="reveal.js/lib/css/github.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -382,12 +382,18 @@
             </div>
           </section>
           <section>
-            <div data-markdown>What is the difference between `module.exports` and `exports`?</div><br>
-            <p class="fragment">Nothing. It's the same</p>
-            <div class="fragment" data-markdown>
-              ```JS
-              console.log(module.exports === exports) // Logs 'true'
-              ```
+            <div data-markdown>
+What is the difference between
+
+`module.exports` and `exports`?</div><br>
+            <div class="fragment">
+
+              <p>Nothing. It's the same</p>
+              <div data-markdown>
+                ```JS
+                console.log(module.exports === exports) // Logs 'true'
+                ```
+              </div>
             </div>
           </section>
           <section>
@@ -441,12 +447,14 @@ npm install &lt;packagename&gt;
 Installs into `./node_modules`
 
 → Use with `require()`</div>
-            <hr style="border-color: gray">
-            <pre><code class="Bash">
-              npm install -g &lt;packagename&gt;
-            </code></pre>
-            Installs to a system path
-            <br>&rarr; Use in CLI
+            <div class="fragment">
+              <hr style="border-color: gray">
+              <pre><code class="Bash">
+                npm install -g &lt;packagename&gt;
+              </code></pre>
+              Installs to a system path
+              <br>&rarr; Use in CLI
+            </div>
           </section>
 
           <section>
