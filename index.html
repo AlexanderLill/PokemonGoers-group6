@@ -206,7 +206,7 @@
             <h2>CommonJS</h2>
             <ul>
               <li class="fragment">optimized for server-side environments</li>
-              <li class="fragment">limit each file to exactly one module <br>
+              <li class="fragment">each file is one module <br>
                 <ul>
                   <li class="fragment">each module can be authored individually<br>
                   &#8594; increases team scalability</li>
@@ -219,62 +219,185 @@
             </ul>
           </section>
           <section>
-            <span class="unobstrusive-text">1 of 3</span>
-            <h2>Require</h2>
-            <pre><code class="hljs" data-trim>
-//hello.js
-console.log('Hello world');
-            </code></pre>
-            <pre><code class="hljs" data-trim>
-//app.js
-require('./hello.js');
-//Console: 'Hello world'
-            </code></pre>
+            <span class="unobstrusive-text">1 of 6</span>
+            <div data-markdown>
+              `require()`
+
+              `hello.js`
+              ```JS
+              console.log('Hello world')
+              ```
+              `app.js`
+              ```JS
+              require('./hello.js') // Logs 'Hello world'
+              ```
+            </div>
+          </section>
+
+          <section>
+            <span class="unobstrusive-text">2 of 6</span>
+            <div data-markdown>
+              Which one does print
+              ```JS
+              // Logs 'Hello'
+              ```
+            </div>
+            <div style="display: flex;">
+              <div style="flex: 1;" data-markdown>
+              `hello.js`
+              ```JS
+              console.log('Hello')
+              ```
+              `app.js`
+              ```JS
+              require('./hello.js')
+              ```
+              </div>
+              <div style="flex: 1;" data-markdown>
+              `hello.js`
+              ```JS
+              console.log('Hello')
+              ```
+              `app.js`
+              ```JS
+              require('./hello.js')
+              require('./hello.js')
+              ```
+              </div>
+              <div style="flex: 1;" data-markdown>
+              `hello.js`
+              ```JS
+              main = function () {
+                console.log('Hello')
+              }
+              ```
+              `app.js`
+              ```JS
+              require('./hello.js')
+              ```
+              </div>
+            </div>
+            <div style="display: flex;" class="fragment">
+              <div style="flex: 1;">
+                &#10003;
+              </div>
+              <div style="flex: 1;">
+                &#10003;
+              </div>
+              <div style="flex: 1;">
+                &#10005;
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <span class="unobstrusive-text">3 of 6</span>
+            <div data-markdown>
+              `exports`
+
+              `hello.js`
+              ```JS
+              exports.one = function () {
+                console.log('One')
+              }
+              exports.two = 'Two'
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()             // Logs 'One'
+              console.log(hello.two)  // Logs 'Two'
+              ```
+            </div>
           </section>
           <section>
-            <span class="unobstrusive-text">2 of 3</span>
-            <h2>Exports</h2>
-            <pre><code class="hljs" data-trim>
-//hello.js
-exports.hello=function(){
-  console.log('Hello');
-}
-exports.world=function(){
-  console.log('world');
-}
-            </code></pre>
-            <pre><code class="hljs" data-trim>
-//app.js
-const hello=require ('./hello.js');
-hello.hello()
-hello.world()
-//Console: 'Hello'
-//Console: 'world'
-            </code></pre>
+            <span class="unobstrusive-text">4 of 6</span>
+            <div data-markdown>
+              `module`
+
+              `hello.js`
+              ```JS
+              module.exports.one = function () {
+                console.log('One')
+              }
+              module.exports.two = 'Two'
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()             // Logs 'One'
+              console.log(hello.two)  // Logs 'Two'
+              ```
+            </div>
           </section>
           <section>
-            <span class="unobstrusive-text">3 of 3</span>
-            <h2>Module</h2>
-            <pre><code class="hljs" data-trim>
-//hello.js
-hello=function(){
-  console.log(module.id);
-}
-exports.world=function(){
-  console.log('world');
-}
-module.exports=hello;
-            </code></pre>
-            <pre><code class="hljs" data-trim>
-//app.js
-const hello=require ('./hello.js');
-hello()
-//hello.world() would lead to an error
-//Console: '/home/phil/Documents/Test_JS/hello.js'
-            </code></pre>
+            <span class="unobstrusive-text">5 of 6</span>
+            <div data-markdown>
+              What is printed?
+
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()
+              console.log(hello.two)
+              ```
+              `hello.js`
+              ```JS
+              module.exports.one = function () {
+                console.log('One')
+              }
+              two = 'Two'
+              ```
+            </div>
+            <div class="fragment" data-markdown>
+              ```JS
+              // Logs 'One'
+              // Logs 'undefined'
+              ```
+            </div>
+          </section>
+          <section>
+            <span class="unobstrusive-text">6 of 6</span>
+            <div data-markdown>
+              What is printed?
+
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()
+              console.log(hello.two)
+              ```
+              `hello.js`
+              ```JS
+              exports.one = function () {
+                console.log('One')
+              }
+              module.exports.two = 'Two'
+              ```
+            </div>
+            <div class="fragment" data-markdown>
+              ```JS
+              // Logs 'One'
+              // Logs 'Two'
+              ```
+            </div>
+          </section>
+          <section>
+            <div data-markdown>What is the difference between `module.exports` and `exports`?</div><br>
+            <p class="fragment">Nothing. It's the same</p>
+          </section>
+          <section>
+            <div data-markdown>
+              Useful variables
+
+              `__filename` and `__dirname`
+              ```JS
+              console.log(__dirname)  // Logs '/home/p/Test_JS'
+              console.log(__filename) // Logs '/home/p/Test_JS/app.js'
+              ```
+            </div>
           </section>
         </section>
-
         <section>
 
           <section>
