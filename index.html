@@ -205,15 +205,15 @@
           <section>
             <h2>CommonJS</h2>
             <ul>
-              <li class="fragment">optimized for server-side environments</li>
-              <li class="fragment">each file is one module <br>
+              <li class="fragment">Optimized for server-side environments</li>
+              <li class="fragment">Each file is one module <br>
                 <ul>
-                  <li class="fragment">each module can be authored individually<br>
-                  &#8594; increases team scalability</li>
-                  <li class="fragment">each module can be debugged independently<br>
-                  &#8594; decreases testing costs</li>
-                  <li class="fragment">each module's scope and context can be controlled<br>
-                  &#8594; isolate the modules</li>
+                  <li class="fragment">Each module can be authored individually<br>
+                  &#8594; Increases team scalability</li>
+                  <li class="fragment">Each module can be debugged independently<br>
+                  &#8594; Decreases testing costs</li>
+                  <li class="fragment">Each module's scope and context can be controlled<br>
+                  &#8594; Isolate the modules</li>
                 </ul>
               </li>
             </ul>
@@ -233,11 +233,10 @@
               ```
             </div>
           </section>
-
           <section>
             <span class="unobstrusive-text">2 of 6</span>
             <div data-markdown>
-              Which one does print
+              Quiz: Which one prints?
               ```JS
               // Logs 'Hello'
               ```
@@ -333,20 +332,20 @@
           <section>
             <span class="unobstrusive-text">5 of 6</span>
             <div data-markdown>
-              What is printed?
+              Quiz: What is printed?
 
-              `app.js`
-              ```JS
-              const hello = require('./hello.js')
-              hello.one()
-              console.log(hello.two)
-              ```
               `hello.js`
               ```JS
               module.exports.one = function () {
                 console.log('One')
               }
-              two = 'Two'
+              const two = 'Two'
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()
+              console.log(hello.two)
               ```
             </div>
             <div class="fragment" data-markdown>
@@ -359,20 +358,20 @@
           <section>
             <span class="unobstrusive-text">6 of 6</span>
             <div data-markdown>
-              What is printed?
+              Quiz: What is printed?
 
-              `app.js`
-              ```JS
-              const hello = require('./hello.js')
-              hello.one()
-              console.log(hello.two)
-              ```
               `hello.js`
               ```JS
               exports.one = function () {
                 console.log('One')
               }
               module.exports.two = 'Two'
+              ```
+              `app.js`
+              ```JS
+              const hello = require('./hello.js')
+              hello.one()
+              console.log(hello.two)
               ```
             </div>
             <div class="fragment" data-markdown>
@@ -385,11 +384,15 @@
           <section>
             <div data-markdown>What is the difference between `module.exports` and `exports`?</div><br>
             <p class="fragment">Nothing. It's the same</p>
+            <div class="fragment" data-markdown>
+              ```JS
+              console.log(module.exports === exports) // Logs 'true'
+              ```
+            </div>
           </section>
           <section>
+            <h2>More useful variables</h2>
             <div data-markdown>
-              Useful variables
-
               `__filename` and `__dirname`
               ```JS
               console.log(__dirname)  // Logs '/home/p/Test_JS'
