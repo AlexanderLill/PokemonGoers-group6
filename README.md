@@ -11,29 +11,29 @@ Node.js is a JavaScript runtime environment that enables developers to build bac
 Ryan Dahl, the creator of Node.js, introduced Node.js at JSConf.eu in Berlin. On one of his first slides Ryan Dahl characterized Node.js with the following five points:
 
 - Server-side JavaScript<br>
-  Back in 2009 JavaScript was mainly used in the browser. The usage of JavaScript to build a server-side application was a novelty.
+  Back in 2009 JavaScript was mainly used in the browser. The usage of JavaScript to build server-side applications was a novelty.
 - Built on Google's V8<br>
-  The V8 JavaScript engine developed by Google for its Chrome browser was at the time, and is still today, one of the fastest JavaScript engines on the market. Ryan Dahl chose to use it because V8 is also open-source.
+  The V8 JavaScript engine developed by Google for its Chrome browser was at the time, and is still today, one of the fastest JavaScript engines on the market. Ryan Dahl chose to use it because V8 is open-source.
 - Evented, non-blocking I/O<br>
   The way how Node.js deals with asynchronicity is one of its defining characteristics. Ryan Dahl later explained in his talk in great detail why asynchronous  i/o is important for Node.js.
 - CommonJS module system<br>
   Back in 2009 the usage of a module system with JavaScript was still uncommon. Ryan Dahl chose to use the CommonJS module format for Node.js. In Node.js every file is a module and it is generally preferred to have more modules instead of long files.
 - 8000+ lines of C/C++, 2000 lines of JavaScript<br>
-  Ryan Dahl meant for Node.js to serve as the foundation for programs written in JavaScript. It itself is mainly written in the system programming languages C and C++. Today much of the functionality originally written for Node.js has been extracted from the Node.js project into standalone libraries like "libuv".
+  Ryan Dahl meant for Node.js to serve as the foundation for programs written in JavaScript. It itself is mainly written in the system programming languages C and C++. Today, much of the functionality originally written for Node.js has been extracted from the Node.js project into standalone libraries like "libuv".
 
-The first four points are still true for Node.js as we know it today. Only the number of lines of code in point 5 have risen considerably since. It is apparent that the architectural design choices that Ryan Dahl made for Node.js back in 2009 were very solid. The video recording of Ryan Dahl's talk is available on YouTube.
+The first four points are still true for Node.js as we know it today. Only the number of lines of code in point 5 has risen considerably since. It is apparent that the architectural design choices that Ryan Dahl made for Node.js back in 2009 were very solid. The video recording of Ryan Dahl's talk is available on YouTube.
 
 **12. January 2010**
 
-Isaac Schlueter introduces the package manager "npm". npm makes integrating third party code into Node.js projects very easy. The first versions of npm didn't ship with Node.js itself. Instead it had to be installed separately.
+Isaac Schlueter introduced the package manager "npm". npm makes integrating third party code into Node.js projects very easy. The first versions of npm didn't ship with Node.js itself. Instead it had to be installed separately.
 
 **10. November 2010**
 
-Ryan Dahl passes the copyright for Node.js to his employer, the company Joyent. Node.js had risen in popularity and he felt that the project should be backed by a corporate entity.
+Ryan Dahl passed the copyright for Node.js to his employer, the company Joyent. Node.js had risen in popularity and he felt that the project should be backed by a corporate entity.
 
 **July 2011**
 
-Microsoft and Joyent cooperate to make Node.js run on Windows which previously only ran on Linux and macOS. This step meant that Node.js was then available on all three major platforms.
+Microsoft and Joyent cooperated to make Node.js run on Windows which previously only ran on Linux and macOS. This step meant that Node.js was then available on all three major platforms.
 
 **25. November 2011**
 
@@ -41,7 +41,7 @@ Node.js version 0.6.3 shipped as the first version with the package manager npm 
 
 **December 2014**
 
-In late 2014 many of the main contributors became unhappy about how the Node.js open-source project was run. Releases were infrequent and the included version of the JavaScript engine V8 was outdated. That is why Fedor Idutny and other node contributors decided to fork the project. The resulting project was called "io.js". Contrary to Node.js io.js had much more frequent releases and it shipped with a recent version of V8 that included new JavaScript features. Consequently io.js felt a lot fresher than Node.js.
+In late 2014 many of the main contributors became unhappy about how the Node.js open-source project was run. Releases were infrequent and the included version of the JavaScript engine V8 was outdated. For these reasons Fedor Idutny and other node contributors decided to fork the project. The resulting project was called "io.js". Contrary to Node.js, io.js had much more frequent releases and it shipped with a recent version of V8 that included new JavaScript features. Consequently io.js felt a lot fresher than Node.js.
 
 **14. September 2015**
 
@@ -64,9 +64,12 @@ Node.js is nowadays a very healthy open-source project.
 The objective of this section is to highlight the good support for modern JavaScript in Node.js.
 
 ## ES2015
-"ES" stands for "ECMAScript". "ECMA" is the standards body that standardizes JavaScript. "ECMAScript" is the official name of JavaScript inside of its standard. "ES2015", often also called "ES6", introduces many new features to the language. In recent months the version of V8 included with Node.js began to support more and more ES2015 features. According to the feature test on  [kangax.github.io](http://kangax.github.io/compat-table/es6/) Node.js version 6 supports 92% of the ES2015 specification.
+
+"ES" stands for "ECMAScript". "ECMA" is the standards body that standardizes JavaScript. "ECMAScript" is the official name of JavaScript and the name refers to the language inside the standard. "ES2015", formerly called "ES6", introduces many new features to the language. In recent months the version of V8 included with Node.js began to support more and more ES2015 features. According to the feature test on  [kangax.github.io](http://kangax.github.io/compat-table/es6/) Node.js version 6 supports 92% of the ES2015 specification.
 
 ## 7 useful ES2015 features
+
+In the following persents 7 useful ES2015 features for Node.js development.
 
 ### Property Shorthand
 
@@ -80,7 +83,6 @@ const person = { name: name, age: age }
 // New
 const person = { name, age }
 ```
-
 
 The property shorthand is an object literal enhancement that makes it less verbose to define properties that have the same name as a variable.
 
@@ -112,7 +114,7 @@ let studentNames = students.map(function (s) { return s.name })
 let studentNames = students.map(s => s.name)
 ```
 
-Arrow functions are a new syntax for defining functions. Arrow functions are less verbose that the traditional function literal. The example above shows how omitting the curly braces around the function body introduces and implied return statement. Another useful feature of arrow functions is that they preserve the `this` of the outer scope. This is typically useful for defining callbacks.
+Arrow functions represent a new syntax for defining functions. The arrow function syntax is less verbose than the traditional function literal. For instance the example above shows how omitting the curly braces around the function body works as an implied return statement. Another useful feature of arrow functions is that they preserve the `this` of the outer scope which is useful for defining callbacks.
 
 
 ### Classes
@@ -128,7 +130,7 @@ class Student extends Person {
 }
 ```
 
-ES2015 introduces a syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactically way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
+ES2015 introduces a new syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactical way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
 
 
 ### Promises
@@ -140,7 +142,7 @@ fs.readFile('hello.text')
   .catch(error => { ... })
 ```
 
-Node.js uses traditionally callbacks for asynchronicity. ES2015 introduces an alternative way called a "promise". The advantages of promises are that they are objects that can be returned as a return value by function. Also, promises provide a robust way for error handling which reduces the risk for bugs inside error handling code.
+Node.js traditionally uses callbacks for asynchronicity. ES2015 introduces an alternative mechanism called "promises". A promise is an object that represents an eventual value. The advantage of promises is that they, since they are objects, can be returned as a return value by functions. Also, promises provide a robust way for error handling which reduces the risk for bugs inside error handling code.
 
 ### Destructuring Assignment
 ```JS
@@ -155,7 +157,7 @@ function processPerson ({ name, age }) {
 }
 ```
 
-In Node.js it is quite frequent that a function accepts a single "options" parameter instead of having multiple parameters. This options parameter is an object and its properties need to be accessed in the function body. ES2015 introduces a convenient way for extracting values from such an object and introduce the as variables inside the function.
+In Node.js it is quite frequent that a function accepts a single "options" object as parameter instead of having multiple parameters. ES2015 introduces a convenient way for extracting values from such an object and introduce them as variables inside the function.
 
 Destructuring also works with arrays and in other places like variable declarations and assignment statements.
 
@@ -171,13 +173,13 @@ Default parameters provide a convenient way to assign values to variables that w
 
 ## Conclusion
 
-Node.js version 6 has good support for modern JavaScript. It should be noted that many of ES2015 features highlighted above improve code quality by enhancing clarity and reducing verbosity.
+Node.js version 6 has good support for modern JavaScript. The ES2015 features highlighted above have in common that they can improve code quality by enhancing clarity and reducing verbosity.
 
 # Pracitical Example: Unit testing with Mocha
 
 This section serves as a practical example of how programming in Node.js looks like. We'll be using CommonJS modules, npm and also some modern JavaScript features presented in the previous sections.
 
-Unit testing is good practice in programming projects. In Node.js projects it is also common practice to have unit tests. All major packages in the npm registry employ unit testing to ensure correct behavior. Luckily unit testing is very easy in Node.js. This section illustrates how to use the `mocha` testing framework and the `chai` assertion library.
+Doing unit testing is good practice in programming projects. In Node.js projects it is also common practice to have unit tests. All major packages in the npm registry employ unit testing to ensure correct behavior. Luckily unit testing is very easy in Node.js. This section illustrates how to use the `mocha` testing framework and the `chai` assertion library.
 
 ## Project Setup
 
@@ -201,7 +203,7 @@ Use `npm install --save mocha chai` to install `mocha` and `chai` as packages wi
 }
 ```
 
-Add `"mocha test/**/*.js"` as the test script in your `package.json`. `test/**/*.js` is a glob pattern. It means "Select all `.js` files inside the `test/` directory". We can use `mocha` as a command because we installed `mocha` as a local package inside project in the previous step.
+Add `"mocha test/**/*.js"` as the test script in your `package.json`. `test/**/*.js` is a glob pattern. It means "Select all `.js` files inside the `test/` directory". We can use `mocha` as a command because we installed `mocha` as a local package in the previous step.
 
 ## Create a Module with Tests
 
@@ -213,7 +215,7 @@ module.exports = function helloWorld () {
 }
 ```
 
-The above module exports a single function returning a string.
+The above module exports a single function which returns a string.
 
 Create `test/hello-world.js` with the following content:
 
@@ -228,7 +230,7 @@ describe('helloWorld()', function () { // Mocha
 })
 ```
 
-The comments show whether the line uses functionality provided by the testing framework `mocha` or by the assertion library `chai`.
+The comments indicate whether the line uses functionality provided by the testing framework `mocha` or by the assertion library `chai`. The `should` mechanism is one of three different notations supported by the `chai` assertion library (Technical note: `should()` adds a `should` property on `Object.prototype` to make this work).
 
 ## Run It
 
@@ -236,8 +238,8 @@ Use `npm test` to run the test.
 
 ## Conclusion
 
-This section showcased how working with Node.js commonly looks like by demonstrating how to do unit testing with Node.js.
+This section showcased how working with Node.js commonly looks like by demonstrating how to do unit testing. More information and documentation about `mocha` and `chai` can be found on their respective project websites.
 
-To conclude let it be said that it is most beneficial to create tests parallel to the development of a feature's functionality. The creation of a plethora of tests beforehand is usually impractical because the tests are frequently rendered obsolete due to the evolution of the project. Also it is not recommended to create them afterwards because treating testing as an afterthought usually leads to bad test coverage.
+To conclude let it be said that it is most beneficial to create tests parallel to the development of a feature's functionality. The creation of a plethora of tests beforehand is usually impractical because the tests are frequently rendered obsolete as a result of the project evolving into a different direction. Also, it is not recommended to create the unit tests afterwards because treating testing as an afterthought usually leads to bad test coverage.
 
 # Useful npm Packages
