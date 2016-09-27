@@ -96,7 +96,8 @@ const obj = {
   hello () { console.log('hello') }
 }
 
-obj.hello() ```
+obj.hello()
+```
 
 This object literal enhancement makes the definition of methods on an object briefer.
 
@@ -107,7 +108,8 @@ This object literal enhancement makes the definition of methods on an object bri
 let studentNames = students.map(function (s) { return s.name })
 
 // New
-let studentNames = students.map(s => s.name)```
+let studentNames = students.map(s => s.name)
+```
 
 Arrow functions are a new syntax for defining functions. Arrow functions are less verbose that the tranditional function literal. The example above shows how omitting the curly braces around the function body introduces and implied return statement. Another useful feature of arrow functions is that they preserve the `this` of the outer scope. This is typically useful for defining callbacks.
 
@@ -122,7 +124,8 @@ class Student extends Person {
   }
 
   get university () { return this._university }
-}```
+}
+```
 
 ES2015 introduces a syntax for defining classes. It should be noted that the new class syntax is just an alternative syntacticaly way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
 
@@ -133,7 +136,8 @@ const fs = require('fs-promise')
 
 fs.readFile('hello.text')
   .then(buffer => { ... })
-  .catch(error => { ... })```
+  .catch(error => { ... })
+```
 
 Node.js uses traditionally callbacks for asynchronicity. ES2015 introduces an alternative way called a "promise". The advantages of promises are that they are objects that can be returned as a return value by function. Also, promises provide a robust way for error handling which reduces the risk for bugs inside error handling code.
 
@@ -147,7 +151,8 @@ function processPerson (options) {
 // New
 function processPerson ({ name, age }) {
   console.log(name, age)
-}```
+}
+```
 
 In Node.js it is quite frequent that a function accepts a single "options" parameter instead of having multiple parameters. This options parameter is an object and its properties need to be acccessed in the function body. ES2015 introduces a convenient way for extracting values from such an object and introduce the as variables inside the function.
 
@@ -158,7 +163,8 @@ Destructuring also works with arrays and in other places like variable declarati
 ```JS
 function inviteToParty (name = 'Max Mustermann') {
 ...
-}```
+}
+```
 
 Default parameters provide a convenient way to assign values to variables that would otherwise be `undefined`.
 
