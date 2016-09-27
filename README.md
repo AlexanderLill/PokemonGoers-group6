@@ -6,7 +6,7 @@ Node.js is a JavaScript runtime environment that enables developers to build bac
 
 # Node.js history
 
-8. Novermber 2009
+**8. Novermber 2009**
 
 Ryan Dahl, the created of Node.js, introduced Node.js at JSConf.eu in Berlin. On one of the first slides Ryan Dahl characterized Node.js with the following five points:
 
@@ -23,31 +23,31 @@ Ryan Dahl, the created of Node.js, introduced Node.js at JSConf.eu in Berlin. On
 
 The first four points are still true for Node.js as we know it today. Only the number of lines of code in point 5 have risen considerably since. It is apparent that the architectural design choices that Ryan Dahl made for Node.js back in 2009 were very solid. The video recording of Ryan Dahl's talk is avaiable on YouTube.
 
-12. January 2010
+**12. January 2010**
 
 Isaac Schlueter introduces the package manager "npm". npm makes integrating third party code into Node.js projects very easy. The first versions of npm didn't ship with Node.js itself. Instead it had to be installed seperately.
 
-10. November 2010
+**10. November 2010**
 
 Ryan Dahl passes the copyright for Node.js to his employer, the company Joyent. Node.js had risen in popularity and he felt that the project should be backed by a corporate entity.
 
-July 2011
+**July 2011**
 
 Microsoft and Joyent cooperate to make Node.js run on Windows which previously only ran on Linux and macOS. This step meant that Node.js was then avaiable on all three major platforms.
 
-25. November 2011
+**25. November 2011**
 
 Node.js version 0.6.3 shipped as the first version with the package manager npm included. Node.js and npm are today inseparable projects. The inclusion of npm meant a major milestone.
 
-December 2014
+**December 2014**
 
 In late 2014 many of the main contributers became unhappy about how the Node.js open-source project was run. Releases were infrequent and the included version of the JavaScript engine V8 was outdated. That is why Fedor Idutny and other node contributers decided to fork the project. The resulting project was called "io.js". Contrary to Node.js io.js had much more frequent releases and it shipped with a recent version of V8 that included new JavaScript features. Consequently io.js felt a lot fresher than Node.js.
 
-14. September 2015
+**14. September 2015**
 
 The introduction of io.js created a rift inside the Node.js community. Both factions weren't happy with the split in the ecosystem and they began talking to each other about how the two projects could merge once more. As a result the Node.js Foundation was formed and in September 2015 Node.js version 4.0 shipped that combined both projects.
 
-Now
+**Now**
 
 Node.js is nowadays a very healthy open-source project.
 
