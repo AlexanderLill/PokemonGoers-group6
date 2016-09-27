@@ -78,7 +78,8 @@ const age = '67'
 const person = { name: name, age: age }
 
 // New
-const person = { name, age }```
+const person = { name, age }
+```
 
 
 The property shorthand is an object literal enhancement that makes it less verbose to define properties that have the same name as a variable.
