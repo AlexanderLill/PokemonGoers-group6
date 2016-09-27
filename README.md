@@ -8,17 +8,22 @@ Node.js is a JavaScript runtime environment that enables developers to build bac
 
 **8. November 2009**
 
-Ryan Dahl, the created of Node.js, introduced Node.js at JSConf.eu in Berlin. On one of the first slides Ryan Dahl characterized Node.js with the following five points:
+Ryan Dahl, the creator of Node.js, introduced Node.js at JSConf.eu in Berlin. On one of his first slides Ryan Dahl characterized Node.js with the following five points:
 
 - Server-side JavaScript
+
   Back in 2009 JavaScript was mainly used in the browser. The usage of JavaScript to build a server-side application was a novelty.
 - Built on Google's V8
+
   The V8 JavaScript engine developed by Google for its Chrome browser was at the time, and is still today, one of the fastest JavaScript engines on the market. Ryan Dahl chose to use it because V8 is also open-source.
 - Evented, non-blocking I/O
+
   The way how Node.js deals with asynchronicity is one of its defining characteristics. Ryan Dahl later explained in his talk in great detail why asynchronous  i/o is important for Node.js.
 - CommonJS module system
+
   Back in 2009 the usage of a module system with JavaScript was still uncommon. Ryan Dahl chose to use the CommonJS module format for Node.js. In Node.js every file is a module and it is generally preferred to have more modules instead of long files.
 - 8000+ lines of C/C++, 2000 lines of JavaScript
+
   Ryan Dahl meant for Node.js to serve as the foundation for programs written in JavaScript. It itself is mainly written in the system programming languages C and C++. Today much of the functionality originally written for Node.js has been extracted from the Node.js project into standalone libraries like "libuv".
 
 The first four points are still true for Node.js as we know it today. Only the number of lines of code in point 5 have risen considerably since. It is apparent that the architectural design choices that Ryan Dahl made for Node.js back in 2009 were very solid. The video recording of Ryan Dahl's talk is available on YouTube.
