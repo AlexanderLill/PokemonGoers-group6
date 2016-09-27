@@ -6,7 +6,7 @@ Node.js is a JavaScript runtime environment that enables developers to build bac
 
 # Node.js history
 
-**8. Novermber 2009**
+**8. November 2009**
 
 Ryan Dahl, the created of Node.js, introduced Node.js at JSConf.eu in Berlin. On one of the first slides Ryan Dahl characterized Node.js with the following five points:
 
@@ -15,17 +15,17 @@ Ryan Dahl, the created of Node.js, introduced Node.js at JSConf.eu in Berlin. On
 - Built on Google's V8
   The V8 JavaScript engine developed by Google for its Chrome browser was at the time, and is still today, one of the fastest JavaScript engines on the market. Ryan Dahl chose to use it because V8 is also open-source.
 - Evented, non-blocking I/O
-  The way how Node.js deals with asynchronicity is one of its defining characteristics. Ryan Dahl later explained in his talk in great detail why asychronous i/o is imporant for Node.js.
+  The way how Node.js deals with asynchronicity is one of its defining characteristics. Ryan Dahl later explained in his talk in great detail why asynchronous  i/o is important for Node.js.
 - CommonJS module system
-  Back in 2009 the usage of a module system with JavaScript was still uncommon. Ryan Dahl chose to use the CommonJS module format for Node.js. In Node.js every file is a module and it is generally perfered to have more modules instead of long files.
+  Back in 2009 the usage of a module system with JavaScript was still uncommon. Ryan Dahl chose to use the CommonJS module format for Node.js. In Node.js every file is a module and it is generally preferred to have more modules instead of long files.
 - 8000+ lines of C/C++, 2000 lines of JavaScript
   Ryan Dahl meant for Node.js to serve as the foundation for programs written in JavaScript. It itself is mainly written in the system programming languages C and C++. Today much of the functionality originally written for Node.js has been extracted from the Node.js project into standalone libraries like "libuv".
 
-The first four points are still true for Node.js as we know it today. Only the number of lines of code in point 5 have risen considerably since. It is apparent that the architectural design choices that Ryan Dahl made for Node.js back in 2009 were very solid. The video recording of Ryan Dahl's talk is avaiable on YouTube.
+The first four points are still true for Node.js as we know it today. Only the number of lines of code in point 5 have risen considerably since. It is apparent that the architectural design choices that Ryan Dahl made for Node.js back in 2009 were very solid. The video recording of Ryan Dahl's talk is available on YouTube.
 
 **12. January 2010**
 
-Isaac Schlueter introduces the package manager "npm". npm makes integrating third party code into Node.js projects very easy. The first versions of npm didn't ship with Node.js itself. Instead it had to be installed seperately.
+Isaac Schlueter introduces the package manager "npm". npm makes integrating third party code into Node.js projects very easy. The first versions of npm didn't ship with Node.js itself. Instead it had to be installed separately.
 
 **10. November 2010**
 
@@ -33,7 +33,7 @@ Ryan Dahl passes the copyright for Node.js to his employer, the company Joyent. 
 
 **July 2011**
 
-Microsoft and Joyent cooperate to make Node.js run on Windows which previously only ran on Linux and macOS. This step meant that Node.js was then avaiable on all three major platforms.
+Microsoft and Joyent cooperate to make Node.js run on Windows which previously only ran on Linux and macOS. This step meant that Node.js was then available on all three major platforms.
 
 **25. November 2011**
 
@@ -41,18 +41,18 @@ Node.js version 0.6.3 shipped as the first version with the package manager npm 
 
 **December 2014**
 
-In late 2014 many of the main contributers became unhappy about how the Node.js open-source project was run. Releases were infrequent and the included version of the JavaScript engine V8 was outdated. That is why Fedor Idutny and other node contributers decided to fork the project. The resulting project was called "io.js". Contrary to Node.js io.js had much more frequent releases and it shipped with a recent version of V8 that included new JavaScript features. Consequently io.js felt a lot fresher than Node.js.
+In late 2014 many of the main contributors became unhappy about how the Node.js open-source project was run. Releases were infrequent and the included version of the JavaScript engine V8 was outdated. That is why Fedor Idutny and other node contributors decided to fork the project. The resulting project was called "io.js". Contrary to Node.js io.js had much more frequent releases and it shipped with a recent version of V8 that included new JavaScript features. Consequently io.js felt a lot fresher than Node.js.
 
 **14. September 2015**
 
-The introduction of io.js created a rift inside the Node.js community. Both factions weren't happy with the split in the ecosystem and they began talking to each other about how the two projects could merge once more. As a result the Node.js Foundation was formed and in September 2015 Node.js version 4.0 shipped that combined both projects.
+The introduction of io.js created a rift inside the Node.js community. Both factions weren't happy with the split in the ecosystem and they began talking to each other about how the two projects could merge once more. As a result, the Node.js Foundation was formed and in September 2015 Node.js version 4.0 shipped that combined both projects.
 
 **Now**
 
 Node.js is nowadays a very healthy open-source project.
 
-- It consitently had 1-2 releases in the past months
-- The Node.js Foundation has a technical steering committe that makes swift technical decisions
+- It consistently had 1-2 releases in the past months
+- The Node.js Foundation has a technical steering committee that makes swift technical decisions
 - npm, the package manager, has become very reliable
 
 # CommonJS - Node's Module System
@@ -112,7 +112,7 @@ let studentNames = students.map(function (s) { return s.name })
 let studentNames = students.map(s => s.name)
 ```
 
-Arrow functions are a new syntax for defining functions. Arrow functions are less verbose that the tranditional function literal. The example above shows how omitting the curly braces around the function body introduces and implied return statement. Another useful feature of arrow functions is that they preserve the `this` of the outer scope. This is typically useful for defining callbacks.
+Arrow functions are a new syntax for defining functions. Arrow functions are less verbose that the traditional function literal. The example above shows how omitting the curly braces around the function body introduces and implied return statement. Another useful feature of arrow functions is that they preserve the `this` of the outer scope. This is typically useful for defining callbacks.
 
 
 ### Classes
@@ -128,7 +128,7 @@ class Student extends Person {
 }
 ```
 
-ES2015 introduces a syntax for defining classes. It should be noted that the new class syntax is just an alternative syntacticaly way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
+ES2015 introduces a syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactically way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
 
 
 ### Promises
@@ -155,9 +155,9 @@ function processPerson ({ name, age }) {
 }
 ```
 
-In Node.js it is quite frequent that a function accepts a single "options" parameter instead of having multiple parameters. This options parameter is an object and its properties need to be acccessed in the function body. ES2015 introduces a convenient way for extracting values from such an object and introduce the as variables inside the function.
+In Node.js it is quite frequent that a function accepts a single "options" parameter instead of having multiple parameters. This options parameter is an object and its properties need to be accessed in the function body. ES2015 introduces a convenient way for extracting values from such an object and introduce the as variables inside the function.
 
-Destructuring also works with arrays and in other places like variable declarations and assigment statements.
+Destructuring also works with arrays and in other places like variable declarations and assignment statements.
 
 ### Default Parameter Values
 
@@ -187,7 +187,7 @@ Create a project folder with a `package.json` inside. It you can use a test edit
 
 Use `npm install --save mocha chai` to install `mocha` and `chai` as packages within the project.
 
-## Package.json Script
+## package.json Script
 ``` JS
 {
   "name": "testing-demo",
