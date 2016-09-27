@@ -167,8 +167,77 @@ function inviteToParty (name = 'Max Mustermann') {
 }
 ```
 
-Default parameters provide a convenient way to assign values to variables that would otherwise be `undefined`.
+Default parameters provide a convenient way to assign values to variables that would otherwise be `undefined`. Note that default values can also be used in destructuring patterns like the one seen in the previous example.
+
+## Conclusion
+
+Node.js version 6 has good support for modern JavaScript. It should be noted that many of ES2015 features highlighted above improve code quality by enhancing clarity and reducing verbosity.
 
 # Pracitical Example: Unit testing with Mocha
+
+This section serves as a practical example of how programming in Node.js looks like. We'll be using CommonJS modules, npm and also some modern JavaScript features presented in the previous sections.
+
+Unit testing is good practice in programming projects. In Node.js projects it is also common practice to have unit tests. All major packages in the npm registry employ unit testing to ensure correct behavior. Luckily unit testing is very easy in Node.js. This section illustrates how to use the `mocha` testing framework and the `chai` assertion library.
+
+## Project Setup
+
+Create a project folder with a `package.json` inside. It you can use a test editor or use `npm init` to create the `package.json` file.
+
+## Installation
+
+Use `npm install --save mocha chai` to install `mocha` and `chai` as packages within the project.
+
+## Package.json Script
+``` JS
+{
+  "name": "testing-demo",
+  "scripts": {
+    "test": "mocha test/**/*.js" // Add this
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
+```
+
+Add `"mocha test/**/*.js"` as the test script in your `package.json`. `test/**/*.js` is a glob pattern. It means "Select all `.js` files inside the `test/` directory". We can use `mocha` as a command because we installed `mocha` as a local package inside project in the previous step.
+
+## Create a Module with Tests
+
+Create `lib/hello-world.js` with the following content:
+
+```JS
+module.exports = function helloWorld () {
+  return 'hello world!'
+}
+```
+
+The above module exports a single function returning a string.
+
+Create `test/hello-world.js` with the following content:
+
+``` JS
+const helloWorld = require('../lib/hello-world')
+require('chai').should() // Chai
+
+describe('helloWorld()', function () { // Mocha
+  it('returns "hello world!"', () => { // Mocha
+    helloWorld().should.equal('hello world!') // Chai
+  })
+})
+```
+
+The comments show whether the line uses functionality provided by the testing framework `mocha` or by the assertion library `chai`.
+
+## Run It
+
+Use `npm test` to run the test.
+
+## Conclusion
+
+This section showcased how working with Node.js commonly looks like by demonstrating how to do unit testing with Node.js.
+
+To conclude let it be said that it is most beneficial to create tests parallel to the development of a feature's functionality. The creation of a plethora of tests beforehand is usually impractical because the tests are frequently rendered obsolete due to the evolution of the project. Also it is not recommended to create them afterwards because treating testing as an afterthought usually leads to bad test coverage.
 
 # Useful npm Packages
