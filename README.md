@@ -59,36 +59,30 @@ Node.js is nowadays a very healthy open-source project.
 
 # npm - Node's package manager
 
-Everything here is basically //TODO
+A package manager or package management system is a tool that automates the the process of installing, updating and removing packages. Packages in Node.js are modules that provide a certain functionality (see the next section about useful npm packages). The default package manager for Node.js "npm" is completely written in JavaScript and is included in every standard installation.
 
-"npm" is the default package manager for Node.js and comes with every Node.js installation.
+"npm" is controlled using a Command Line Interface. The most basic commands are as follows:
+* __npm install__
+  This looks up all packages defined in the *package.json* and installs those on the current system. Packages are installed into the *node_modules* folder of the current project.
+* __npm install <packagename>__
+  This installs the given package for the current project.
+* __npm install -s <packagename>__
+  This installs the given package for the current project and adds this package to the *package.json* file.
+* __npm install -g <packagename>__ installs a package globally, using a system-wide destination directory for the module. This is used for packages that will be used on the Command Line (e.g. *gulp <task> <othertask>*). `//TODO: Explain this more?`
 
-A package manager ...
+npm is also widely used for automating reoccuring tasks. This can be accomplished by defining so called "scripts" in the *package.json* file. The following shows an example definition of skripts for the *start* and *test* commands:
+```JS
+{ ...,
+  "scripts": {
+    "start": "node lib/main",
+    "test": "node tests/main && standard"
+  }, ...
+}
+```
 
-"npm" is completely written in JavaScript...
-... comes with a Command Line Interface... commands can be looked up on the [manpage](http://www.google.de) ...
+Those pre-defined scripts can then be executed using `npm start` and `npm test`. This section can also be extended with other scripts, which can be run with `npm run-script scriptname`. Many more commands can be found on the  [project website](https://docs.npmjs.com/cli/npm).
 
-npm install
-npm install <packagename>
-npm install -s
-npm install -g
-npm start
-npm stop
-npm test...
-
-
-Local vs global packages...
-
-Package.json ...
-... automation with scripts
-
-And many more...
-NPM has currently >320,000 packages
-And >400 are added every day
-
-
-
-
+"npm" currently has more than 300,000 packages, and about 400 new packages get added every day (Source: http://www.modulecounts.com/)
 
 # Excellent ES2015 support in Node.js
 
@@ -277,39 +271,39 @@ To conclude let it be said that it is most beneficial to create tests parallel t
 
 # Project
 
-Our project was to create a mobile-first website providing information for [Pokemon Go](http://example.com) players, including current sightings of pokemon on a map and predicted sightings in the near future. ... //TODO
+Our project was to create a mobile-first website providing information for [Pokemon Go](http://example.com) players. This website should show current sightings of pokemon on a map and predicted sightings in the near future. Additionally some more information about the Pokemon like an overview over all Pokemon and their attributes as well as a sentiment analysis for every Pokemon should be shown.
 
 ## Overview
-
 The website consists of the following basic parts which will be explained in the upcoming sections:
-* Sidebar
-* PokeMap
-* PokeDex
-* PokeDetail
-* About page
-* Imprint & Disclaimer
-
+* **Sidebar** for navigating through the app
+* **PokeMap** for showing the map with sightings, predictions and mobs
+* **PokeDex** for showing an overview of all Pokemon and searching
+* **PokeDetail** for providing all information about a Pokemon
+* **About page**
+* **Imprint & Disclaimer**
 
 ## Sidebar
-
+The sidebar enables navigating through the app by providing links to the **PokeMap**, the **PokeDex**, the **About page** and the **Imprint & Disclaimer** page.
 
 ## PokeMap
-* Search for Location and Pokemon
-* Map
+The PokeMap is screen showing a map with current Pokemon sightings, Pokemon predictions and PokeMobs. Additionally you can:
+* Search for a Location or a Pokemon
 * Filter by Time and/or Pokemon
-* Detail sheet for Pokemon-Sighting/Prediction/Mob
+* Show a detail sheet for a Pokemon-Sighting/Prediction/PokeMob
 
 ## PokeDex
-* Search
-* List of Pokemon & their rarity
+The PokeDex shows a list of Pokemon including some of their attributes like name, number and rarity. Additionally it enables you to search for pokemon and open a Pokemons PokeDetail page.
 
 ## PokeDetail
+The PokeDetail page shows all relevant information about a Pokemon, including:
 * Name and number of Pokemon
 * Description, types, weaknesses and strengths
-* Attributes and evolution
-* Attacks
-* Sentiment analysis
+* Attributes (like weight, flee rate, ...) and evolution
+* Possible attacks
+And additionally a sentiment analysis for the Pokemon. This data is extracted from [Twitter](https://www.twitter.com)
 
 ## About page
+This page provides background information about the project and a list of all the contributors.
 
 ## Imprint & Disclaimer
+This page shows legal information about the project.
