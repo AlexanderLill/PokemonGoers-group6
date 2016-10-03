@@ -59,6 +59,37 @@ Node.js is nowadays a very healthy open-source project.
 
 # npm - Node's package manager
 
+Everything here is basically //TODO
+
+"npm" is the default package manager for Node.js and comes with every Node.js installation.
+
+A package manager ...
+
+"npm" is completely written in JavaScript...
+... comes with a Command Line Interface... commands can be looked up on the [manpage](http://www.google.de) ...
+
+npm install
+npm install <packagename>
+npm install -s
+npm install -g
+npm start
+npm stop
+npm test...
+
+
+Local vs global packages...
+
+Package.json ...
+... automation with scripts
+
+And many more...
+NPM has currently >320,000 packages
+And >400 are added every day
+
+
+
+
+
 # Excellent ES2015 support in Node.js
 
 The objective of this section is to highlight the good support for modern JavaScript in Node.js.
@@ -243,3 +274,42 @@ This section showcased how working with Node.js commonly looks like by demonstra
 To conclude let it be said that it is most beneficial to create tests parallel to the development of a feature's functionality. The creation of a plethora of tests beforehand is usually impractical because the tests are frequently rendered obsolete as a result of the project evolving into a different direction. Also, it is not recommended to create the unit tests afterwards because treating testing as an afterthought usually leads to bad test coverage.
 
 # Useful npm Packages
+
+# Project
+
+Our project was to create a mobile-first website providing information for [Pokemon Go](http://example.com) players, including current sightings of pokemon on a map and predicted sightings in the near future. ... //TODO
+
+## Overview
+
+The website consists of the following basic parts which will be explained in the upcoming sections:
+* Sidebar
+* PokeMap
+* PokeDex
+* PokeDetail
+* About page
+* Imprint & Disclaimer
+
+
+## Sidebar
+
+
+## PokeMap
+* Search for Location and Pokemon
+* Map
+* Filter by Time and/or Pokemon
+* Detail sheet for Pokemon-Sighting/Prediction/Mob
+
+## PokeDex
+* Search
+* List of Pokemon & their rarity
+
+## PokeDetail
+* Name and number of Pokemon
+* Description, types, weaknesses and strengths
+* Attributes and evolution
+* Attacks
+* Sentiment analysis
+
+## About page
+
+## Imprint & Disclaimer
