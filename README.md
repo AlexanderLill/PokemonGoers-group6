@@ -55,7 +55,28 @@ Node.js is nowadays a very healthy open-source project.
 - The Node.js Foundation has a technical steering committee that makes swift technical decisions
 - npm, the package manager, has become very reliable
 
-# CommonJS - Node's Module System
+# Module pattern in Node.js
+## CommonJS - Node's Module System
+  For writing about the module pattern in Node.js it is important to know where it came from. That's why we'll take a closer look at CommonJS. CommonJS is a project made for creating a JavaScript ecosystem outside the browser. It was created by the software developer Kevin Dangoor in January 2009 under the name "ServerJS". Kevin Dangoor's idea was to create an JavaScript environment, which is able to include other modules, package up code and install packages for creating cleaner server-side environments(0). In March 2009 the CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials(1), 'require', 'environment' and 'exports' and it must not tamper with or mutate the transitive primordials(1). The CommonJS modules were shown off with several implementations in April 2009 at the first JSConf in Washington, DC. After August 2009 the group was formally renamed CommonJS to reflect the broader applicability of the APIs. On November 8, 2009 Ryan Dahl announced Node.js with the modular environment of CommonJS. On May 26, 2013 Isaac Z. Schlueter wrote a statement where he explained why CommonJS is made obsolete by Node.js and is avoided by the core Node.js developers(2). Node.js needed asynchronous IO paradigms, cross-platform compatibility and streaming APIs, which CommonJS never really achieved. Another critical difference was the missing priority of performance for the CommonJS community which was one of the main priorities of Node.js. That's why Schlueter seperated Node.js from the CommonJS keeping some core features like the module system from the original "securable modules".
+
+##Reasons for using a modular system
+  As already mentioned you want to keep your develop environment clean. A big server can contain a lot of code which makes it harder to work on if everything is in one file. The idea behind modular systems is to use a set of highly decoupled files with distinct functionalities. By removing as many dependencies as possible, we can increase team scalability, maintainability and decrease testing costs. The modules can be authored individually, debugged independently and their scope and context can be controlled easily.   
+
+##Using the module pattern
+  The modular structure of Node.js right now is easy to use. There are three scoped variables 'require', 'exports' and 'module'. 
+  'require(...)' is general enough to support many directory structures for building native packages from Node.js modules without modification. 'require(...)' can load core modules of Node.js, .js files as JavaScript text files, .json files as JavaScript Objects, .node files as binary addons and already installed node modules. 'require' chaches the loaded modules which means multiple calls of 'require' will get exactly the same object returned, if it's resolving to the same file. Because of this caching, calling 'require' twice on the same file may not execute it twice. 'require(...)' is case-sensitive. That's why the cache will reload 'require('./file')' and 'require('./FILE')' even if it's the same file. 'require(...)' does always prefer core modules even if a file with the same name exists in the directory. To access objects and functions we need to export them. Functions and objects can be added to the root of your module by adding them as property to the 'exports' variable. Variables local to the module will be private, because the module is wrapped in a function by Node.js itself. Using 'module.exports' instead of 'exports' changes the root of your module's export to be a function or object and lets you export a complete object in one assignment without the need to use properties. The 'module' variable provides metadata about the module itself, e.g. it provides a 'filename' property which is equivalent to '__filename'.
+
+(TODO improve or delete next chapter)
+##Alternatives
+  Another choice for writing modular JavaScript is AMD. The developers of Node.js considered using AMD but it became apparent that AMD was too complex for Node.js's normal use. AMD adopts a browser-first approach, is asynchronous and more flexible but binds you to a 'define()' wrapper which is bulky and may disturb your workflow.
+  In the future JavaScript itself may provide some functionallity for modular programming. ECMAScript is composed of a number of developers who'll work on the evolution of JavaScript for large-scale development. So maybe the Node.js modular pattern will change in some years.
+
+(TODO May be deleted)
+##Links
+(0) blog post link
+(1) Primodials are "Object", "Array", etc. These are defined by ECMAScript
+(2) TODO Link to comment
+
 
 # npm - Node's package manager
 
