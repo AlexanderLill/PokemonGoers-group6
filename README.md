@@ -71,7 +71,7 @@ Node.js is nowadays a very healthy open-source project.
 
 **March 2009**
 
-  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials[0](# “Primodials are ‘Object’, ‘Array’, etc. These are defined by ECMAScript”), 'require', 'environment' and 'exports' and it must not tamper with or mutate the transitive primordials[0].
+  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from [primordials](# “Primodials are ´Object´, ´Array´, etc. These are defined by ECMAScript”), ´require´, ´environment´ and ´exports´ and it must not tamper with or mutate the transitive primordials[0].
 
 **April 2009**
 
@@ -91,19 +91,19 @@ Node.js is nowadays a very healthy open-source project.
 
 # Using the module pattern
 
-  The modular structure of Node.js right now is easy to use. There are three scoped variables 'require', 'exports' and 'module'. 
+  The modular structure of Node.js right now is easy to use. There are three scoped variables ´require´, ´exports´ and ´module´. 
 
 **require**
 
-  'require(...)' is general enough to support many directory structures for building native packages from Node.js modules without modification. 'require(...)' can load core modules of Node.js, .js files as JavaScript text files, .json files as JavaScript Objects, .node files as binary add-ons and already installed node modules. 'require' caches the loaded modules which means multiple calls of 'require' will get exactly the same object returned, if it's resolving to the same file. Because of this caching, calling 'require' twice on the same file may not execute it twice. 'require(...)' is case-sensitive. That's why the cache will reload 'require('./file')' and 'require('./FILE')' even if it's the same file. 'require(...)' does always prefer core modules even if a file with the same name exists in the directory. 
+  ´require(...)´ is general enough to support many directory structures for building native packages from Node.js modules without modification. ´require(...)´ can load core modules of Node.js, .js files as JavaScript text files, .json files as JavaScript Objects, .node files as binary add-ons and already installed node modules. ´require´ caches the loaded modules which means multiple calls of ´require´ will get exactly the same object returned, if it's resolving to the same file. Because of this caching, calling ´require´ twice on the same file may not execute it twice. ´require(...)´ is case-sensitive. That's why the cache will reload ´require('./file')´ and ´require('./FILE')´ even if it's the same file. ´require(...)´ does always prefer core modules even if a file with the same name exists in the directory. 
 
 **exports**
 
-  To access objects and functions we need to export them. Functions and objects can be added to the root of your module by adding them as property to the 'exports' variable. Variables local to the module will be private, because the module is wrapped in a function by Node.js itself. 
+  To access objects and functions we need to export them. Functions and objects can be added to the root of your module by adding them as property to the ´exports´ variable. Variables local to the module will be private, because the module is wrapped in a function by Node.js itself. 
 
 **module**
 
-  Using 'module.exports' instead of 'exports' changes the root of your module's export to be a function or object and lets you export a complete object in one assignment without the need to use properties. The 'module' variable provides metadata about the module itself, e.g. it provides a 'filename' property which is equivalent to '__filename'.
+  Using ´module.exports´ instead of ´exports´ changes the root of your module's export to be a function or object and lets you export a complete object in one assignment without the need to use properties. The ´module´ variable provides metadata about the module itself, e.g. it provides a ´filename´ property which is equivalent to ´__filename´.
 
 # npm - Node's package manager
 
