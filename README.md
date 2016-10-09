@@ -71,7 +71,7 @@ Node.js is nowadays a very healthy open-source project.
 
 **March 2009**
 
-  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials (Primodials are `Object`, `Array`, etc. These are defined by [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)), `require`, `environment` and `exports` and it must not tamper with or mutate the transitive primordials.
+  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials (Defined by [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm) primodials are `Object`, `Array`, etc.), `require`, `environment` and `exports` and it must not tamper with or mutate the transitive primordials.
 
 **April 2009**
 
