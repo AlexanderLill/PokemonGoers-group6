@@ -59,7 +59,7 @@ Node.js is nowadays a very healthy open-source project.
 
 # Reasons for using a modular system
 
-  A big server can contain a lot of code which makes it harder to work on if everything is in one file. The idea behind modular systems is to use a set of highly decoupled files with distinct functionalities. By removing as many dependencies as possible, you can increase team scalability, maintainability and decrease testing costs. The modules can be authored individually, debugged independently and their scope and context can be controlled easily. In short you keep your develop environment clean.    
+  A big server can contain a lot of code which makes it harder to work on if everything is in one file. The idea behind modular systems is to use a set of highly decoupled files with distinct functionalities. By removing as many dependencies as possible, you can increase team scalability, maintainability and decrease testing costs. The modules can be authored individually, debugged independently and their scope and context can be controlled easily. In short you want to keep your develop environment clean.    
 
 # CommonJS - Node's Module System
 
