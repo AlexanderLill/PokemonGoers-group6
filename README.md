@@ -71,7 +71,7 @@ Node.js is nowadays a very healthy open-source project.
 
 **March 2009**
 
-  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials[0][# “Primodials are ‘Object’, ‘Array’, etc. These are defined by ECMAScript”], 'require', 'environment' and 'exports' and it must not tamper with or mutate the transitive primordials[0].
+  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials[0](# “Primodials are ‘Object’, ‘Array’, etc. These are defined by ECMAScript”), 'require', 'environment' and 'exports' and it must not tamper with or mutate the transitive primordials[0].
 
 **April 2009**
 
@@ -87,7 +87,7 @@ Node.js is nowadays a very healthy open-source project.
 
 **26 May 2013**
 
-  Isaac Z. Schlueter wrote a statement where he explained why CommonJS is made obsolete by Node.js and is avoided by the core Node.js developers[2](https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15432598). Node.js needed asynchronous IO paradigms, cross-platform compatibility and streaming APIs, which CommonJS never really achieved. Another critical difference was the missing priority of performance for the CommonJS community which was one of the main priorities of Node.js. That's why Schlueter separated Node.js from the CommonJS keeping some core features like the module system from the original "securable modules".
+  Isaac Z. Schlueter wrote a statement where he explained why CommonJS is [made obsolete by Node.js and is avoided by the core Node.js developers](https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15432598). Node.js needed asynchronous IO paradigms, cross-platform compatibility and streaming APIs, which CommonJS never really achieved. Another critical difference was the missing priority of performance for the CommonJS community which was one of the main priorities of Node.js. That's why Schlueter separated Node.js from the CommonJS keeping some core features like the module system from the original "securable modules".
 
 # Using the module pattern
 
