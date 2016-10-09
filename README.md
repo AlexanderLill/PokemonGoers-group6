@@ -317,6 +317,64 @@ To conclude let it be said that it is most beneficial to create tests parallel t
 
 # Useful npm Packages
 
+  All of the following packages can be installed with `npm install` in front of their name.
+
+**Testing**
+  
+  As already seen there are some testing packages like: 
+  - `mocha chai`
+  - `jasmine-node`
+
+**Style checking**
+
+  For style checking you can use linter. Linter are tools that flags suspicious language using. By adding rules they ensure a consistent code styling in big projects. Example packages are:
+  - `standard` (without semicolons)
+  - `semistandard` (with semicolons)
+
+**Utilities**
+  
+  Reinventing the wheel isn't necessary by using: 
+  - `lodash` for various utility functions
+  - `request` to perform HTTP requests
+  - `fs-promise` Node's `fs` module promisified
+
+**Read and Write Excel files**
+
+  Automating the exchange between an Excel file and a database is possible with the `xlsx` package. A simple example:
+
+  ```JS
+  const XLSX = require('xlsx')
+  const workbook = XLSX.readFile('test.xlsx')
+  ...
+  ``` 
+
+**Web Framework**
+
+  One of the most used packages for creating a server in node is `express`. With only three lines of code you can create your own server:
+
+  ```JS
+  const express = require('express');
+  const app = express();
+  app.listen(3000);
+  ```
+  
+**Build Tools**
+  
+  These packages are made for transpiling, concatenating, minimizing, linting and obfuscating the code of projects:
+  - `grunt`
+  - `gulp`
+  - `broccoli`
+  
+**Databases**
+
+  Simple solutions for using databases are provided by:
+  - `mongoose` (MongoDB)
+  - `bookshelf` (PostgreSQL, MySQL, SQLite3)
+
+**And many more**
+  
+  NPM has currently over 320,000 packages and over 400 are added every day.
+
 # Project
 
 Our project was to create a mobile-first website providing information for [Pokemon Go](http://example.com) players. This website should show current sightings of pokemon on a map and predicted sightings in the near future. Additionally some more information about the Pokemon like an overview over all Pokemon and their attributes as well as a sentiment analysis for every Pokemon should be shown.
