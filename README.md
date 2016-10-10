@@ -55,55 +55,61 @@ Node.js is nowadays a very healthy open-source project.
 - The Node.js Foundation has a technical steering committee that makes swift technical decisions
 - npm, the package manager, has become very reliable
 
-# Module pattern in Node.js
+# Module System of Node.js
 
-# Reasons for using a modular system
+# Reasons for Using a Module System
 
-  A big server can contain a lot of code which makes it harder to work on if everything is in one file. The idea behind modular systems is to use a set of highly decoupled files with distinct functionalities. By removing as many dependencies as possible, you can increase team scalability, maintainability and decrease testing costs. The modules can be authored individually, debugged independently and their scope and context can be controlled easily. In short you want to keep your develop environment clean.
+A big server application can contain a lot of code. Having only a few, but very long files is disadventageous. Node's module system makes it very easy to have a large set of highly decoupled files with distinct functionalities. Modules can be authored individually, debugged and tested independently. This helps with team scalability, maintainability and decreases testing costs.
 
-# CommonJS - Node's Module System
+# CommonJS - Node's Module Format
 
-  For writing about the module pattern in Node.js it is important to know where it came from. That's why we'll take a closer look at CommonJS. CommonJS is a project made for creating a JavaScript ecosystem outside the browser.
+The module format used by Node.js is called "CommonJS". This section first goes into the history of CommonJS and then how it can be used.
+
+## Histroy
 
 **January 2009**
 
-  CommonJS was created by the software developer Kevin Dangoor under the name "ServerJS". Kevin Dangoor's idea was to create a JavaScript environment, which is able to [include other modules, package up code and install packages for creating cleaner server-side environments](http://www.blueskyonmars.com/2009/01/29/what-server-side-javascript-needs).
+CommonJS was created by the software developer Kevin Dangoor under the name "ServerJS". Kevin Dangoor's idea was to create a JavaScript environment, which is able to [include other modules, package up code and install packages for creating cleaner server-side environments](http://www.blueskyonmars.com/2009/01/29/what-server-side-javascript-needs).
 
 **March 2009**
 
-  The CommonJS API version 0.1 with its "securable modules" was released. The idea behind secure modules is basically to have additional constraints. E.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials (Defined by [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm) primodials are `Object`, `Array`, etc.), `require`, `environment` and `exports` and it must not tamper with or mutate the transitive primordials.
+The CommonJS API version 0.1 with its "securable modules" was released. The basic idea behind secure modules is to have additional constraints, e.g. a module must not write to any free variables or their transitive members, it must not refer to any free variables apart from primordials (Defined by [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm) primodials are `Object`, `Array`, etc.), `require`, `environment` and `exports` and it must not tamper with or mutate the transitive primordials.
 
 **April 2009**
 
-  The CommonJS modules were shown off with several implementations at the first JSConf in Washington, DC.
+CommonJS modules were shown off with several implementations at the first JSConf in Washington, DC.
 
 **August 2009**
 
-  The group was formally renamed CommonJS to reflect the broader applicability of the APIs.
+The group was formally renamed to CommonJS in order to reflect the broader applicability of the APIs.
 
 **8 November 2009**
 
-  Ryan Dahl announced Node.js with the modular environment of CommonJS.
+Ryan Dahl announced Node.js and that it uses CommonJS.
 
 **26 May 2013**
 
-  Isaac Z. Schlueter wrote a statement where he explained why CommonJS is [made obsolete by Node.js and is avoided by the core Node.js developers](https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15432598). Node.js needed asynchronous IO paradigms, cross-platform compatibility and streaming APIs, which CommonJS never really achieved. Another critical difference was the missing priority of performance for the CommonJS community which was one of the main priorities of Node.js. That's why Schlueter separated Node.js from the CommonJS keeping some core features like the module system from the original "securable modules".
+Isaac Z. Schlueter wrote a statement where he explained why CommonJS is [made obsolete by Node.js and is avoided by the core Node.js developers](https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15432598). Node.js needed asynchronous IO paradigms, cross-platform compatibility and streaming APIs, which CommonJS never really achieved. Another critical difference was the missing priority of performance for the CommonJS community which was one of the main priorities of Node.js. That's why Schlueter separated Node.js from the CommonJS keeping some core features like the module system from the original "securable modules".
 
-# Using the module pattern
+## Usage
 
-  The modular structure of Node.js right now is easy to use. There are three scoped variables `require`, `exports` and `module`.
+The module system of Node.js is easy to use. There are three scoped variables `require`, `exports` and `module`.
 
 **require**
 
-  `require(...)` is general enough to support many directory structures for building native packages from Node.js modules without modification. `require(...)` can load core modules of Node.js, .js files as JavaScript text files, .json files as JavaScript Objects, .node files as binary add-ons and already installed node modules. `require` caches the loaded modules which means multiple calls of `require` will get exactly the same object returned, if it's resolving to the same file. Because of this caching, calling `require` twice on the same file may not execute it twice. `require(...)` is case-sensitive. That's why the cache will reload `require('./file')` and `require('./FILE')` even if it's the same file. `require(...)` does always prefer core modules even if a file with the same name exists in the directory.
+`require(path)` is used to import other modules.
+
+- It can load core modules of Node.js, `.js` files as JavaScript text files, `.json` files as JavaScript Objects, `.node` files as binary add-ons and packages installed via npm.
+- It caches the loaded modules. If `require()` is called with a path that has already been seen it returns the cached module. So, modules are only executed once. However, it should be noted that require treats paths case-sensitively. So, `require('./file')` and `require('./FILE')` are treated as distinct paths.
 
 **exports**
 
-  To access objects and functions we need to export them. Functions and objects can be added to the root of your module by adding them as property to the `exports` variable. Variables local to the module will be private, because the module is wrapped in a function by Node.js itself.
+Modules can make objects and objects and functions available to the outside by exporting them. This is done my adding them as properties on the `exports` object. Ordinary, not exported variables inside the modules cannot be accessed from the outside.
 
 **module**
 
-  Using `module.exports` instead of `exports` changes the root of your module's export to be a function or object and lets you export a complete object in one assignment without the need to use properties. The `module` variable provides metadata about the module itself, e.g. it provides a `filename` property which is equivalent to `__filename`.
+- `module.exports`: `module.exports` and `exports` are the same object. Alternatively to setting properties on the `exports` object, it is also viable to replace the object outright by setting `module.exports`. If a module should only export a single value, it is actually very common to export it by setting `module.exports` directly.
+- The `module` variable also provides metadata about the module itself, e.g. it provides a `filename` property which is equivalent to `__filename`.
 
 # npm - Node's package manager
 
