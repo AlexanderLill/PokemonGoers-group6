@@ -2,7 +2,7 @@
 
 # Introduction
 
-Node.js is a JavaScript runtime environment that enables developers to build backends of sophisticated web applications. A characteristic that differentiates Node.js from other server-side technologies like Java is how concurrency is handled. Node.js' approach builds on the event-driven architecture of the JavaScript language. This means that a single JavaScript thread handles incoming requests. Node.js achieves this through asynchronous i/o. Instead of waiting for network requests or file system accesses to finish, the JavaScript thread continues its execution and a callback is executed once the data arrives. A single Node.js process can handle thousands of requests much more efficiently compared to the classical approach where for every request a new thread is created. Node is thus optimized for optimal throughput and scalability.
+Node.js is a JavaScript runtime environment that enables developers to build backends of sophisticated web applications. A unique characteristic that differentiates Node.js from other server-side technologies like Java is how concurrency is handled. Node.js' approach builds on the event-driven architecture of the JavaScript language. This means that a single JavaScript thread handles incoming requests. Node.js achieves this through asynchronous i/o. Instead of waiting for network requests or file system accesses to finish, the JavaScript thread continues its execution and a callback is executed once the data arrives. A single Node.js process can handle thousands of requests much more efficiently compared to the classical approach where for every request a new thread is created. Node is thus optimized for optimal throughput and scalability.
 
 # Node.js history
 
@@ -59,7 +59,7 @@ Node.js is nowadays a very healthy open-source project.
 
 # Reasons for using a modular system
 
-  A big server can contain a lot of code which makes it harder to work on if everything is in one file. The idea behind modular systems is to use a set of highly decoupled files with distinct functionalities. By removing as many dependencies as possible, you can increase team scalability, maintainability and decrease testing costs. The modules can be authored individually, debugged independently and their scope and context can be controlled easily. In short you want to keep your develop environment clean.    
+  A big server can contain a lot of code which makes it harder to work on if everything is in one file. The idea behind modular systems is to use a set of highly decoupled files with distinct functionalities. By removing as many dependencies as possible, you can increase team scalability, maintainability and decrease testing costs. The modules can be authored individually, debugged independently and their scope and context can be controlled easily. In short you want to keep your develop environment clean.
 
 # CommonJS - Node's Module System
 
@@ -75,7 +75,7 @@ Node.js is nowadays a very healthy open-source project.
 
 **April 2009**
 
-  The CommonJS modules were shown off with several implementations at the first JSConf in Washington, DC. 
+  The CommonJS modules were shown off with several implementations at the first JSConf in Washington, DC.
 
 **August 2009**
 
@@ -91,15 +91,15 @@ Node.js is nowadays a very healthy open-source project.
 
 # Using the module pattern
 
-  The modular structure of Node.js right now is easy to use. There are three scoped variables `require`, `exports` and `module`. 
+  The modular structure of Node.js right now is easy to use. There are three scoped variables `require`, `exports` and `module`.
 
 **require**
 
-  `require(...)` is general enough to support many directory structures for building native packages from Node.js modules without modification. `require(...)` can load core modules of Node.js, .js files as JavaScript text files, .json files as JavaScript Objects, .node files as binary add-ons and already installed node modules. `require` caches the loaded modules which means multiple calls of `require` will get exactly the same object returned, if it's resolving to the same file. Because of this caching, calling `require` twice on the same file may not execute it twice. `require(...)` is case-sensitive. That's why the cache will reload `require('./file')` and `require('./FILE')` even if it's the same file. `require(...)` does always prefer core modules even if a file with the same name exists in the directory. 
+  `require(...)` is general enough to support many directory structures for building native packages from Node.js modules without modification. `require(...)` can load core modules of Node.js, .js files as JavaScript text files, .json files as JavaScript Objects, .node files as binary add-ons and already installed node modules. `require` caches the loaded modules which means multiple calls of `require` will get exactly the same object returned, if it's resolving to the same file. Because of this caching, calling `require` twice on the same file may not execute it twice. `require(...)` is case-sensitive. That's why the cache will reload `require('./file')` and `require('./FILE')` even if it's the same file. `require(...)` does always prefer core modules even if a file with the same name exists in the directory.
 
 **exports**
 
-  To access objects and functions we need to export them. Functions and objects can be added to the root of your module by adding them as property to the `exports` variable. Variables local to the module will be private, because the module is wrapped in a function by Node.js itself. 
+  To access objects and functions we need to export them. Functions and objects can be added to the root of your module by adding them as property to the `exports` variable. Variables local to the module will be private, because the module is wrapped in a function by Node.js itself.
 
 **module**
 
@@ -320,8 +320,8 @@ To conclude let it be said that it is most beneficial to create tests parallel t
   All of the following packages can be installed with `npm install` in front of their name.
 
 **Testing**
-  
-  As already seen there are some testing packages like: 
+
+  As already seen there are some testing packages like:
   - `mocha chai`
   - `jasmine-node`
 
@@ -332,8 +332,8 @@ To conclude let it be said that it is most beneficial to create tests parallel t
   - `semistandard` (with semicolons)
 
 **Utilities**
-  
-  Reinventing the wheel isn't necessary by using: 
+
+  Reinventing the wheel isn't necessary by using:
   - `lodash` for various utility functions
   - `request` to perform HTTP requests
   - `fs-promise` Node's `fs` module promisified
@@ -346,7 +346,7 @@ To conclude let it be said that it is most beneficial to create tests parallel t
   const XLSX = require('xlsx')
   const workbook = XLSX.readFile('test.xlsx')
   ...
-  ``` 
+  ```
 
 **Web Framework**
 
@@ -357,14 +357,14 @@ To conclude let it be said that it is most beneficial to create tests parallel t
   const app = express();
   app.listen(3000);
   ```
-  
+
 **Build Tools**
-  
+
   These packages are made for transpiling, concatenating, minimizing, linting and obfuscating the code of projects:
   - `grunt`
   - `gulp`
   - `broccoli`
-  
+
 **Databases**
 
   Simple solutions for using databases are provided by:
@@ -372,7 +372,7 @@ To conclude let it be said that it is most beneficial to create tests parallel t
   - `bookshelf` (PostgreSQL, MySQL, SQLite3)
 
 **And many more**
-  
+
   NPM has currently over 320,000 packages and over 400 are added every day.
 
 # Project
