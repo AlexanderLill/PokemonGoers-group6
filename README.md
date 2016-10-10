@@ -387,14 +387,14 @@ NPM has currently over 320,000 packages and over 400 are added every day.
 
 # Project
 
-Our project was to create a mobile-first website providing information for [Pokemon Go](http://example.com) players. This website should show current sightings of pokemon on a map and predicted sightings in the near future. Additionally some more information about the Pokemon like an overview over all Pokemon and their attributes as well as a sentiment analysis for every Pokemon should be shown.
+Our project was to create a mobile-first website that provides information to [Pokemon Go](http://www.pokemongo.com/) players. This website shows Pokemon sightings and predicted sightings in the near future as well as PokeMobs (large gatherings of Pokemon Go players) on a map. Additionally it provides information about the Pokemon, like their attributes, as well as a sentiment analysis based on what users say on twitter.
 
 ## Overview
 The website consists of the following basic parts which will be explained in the upcoming sections:
 * **Sidebar** for navigating through the app
-* **PokeMap** for showing the map with sightings, predictions and mobs
-* **PokeDex** for showing an overview of all Pokemon and searching
-* **PokeDetail** for providing all information about a Pokemon
+* **PokeMap** shows the map with sightings, predictions and mobs
+* **PokeDex** lists an overview of all Pokemon
+* **PokeDetail** providing all detailed information about a Pokemon
 * **About page**
 * **Imprint & Disclaimer**
 
@@ -403,20 +403,22 @@ The sidebar enables navigating through the app by providing links to the **PokeM
 
 ## PokeMap
 The PokeMap is screen showing a map with current Pokemon sightings, Pokemon predictions and PokeMobs. Additionally you can:
-* Search for a Location or a Pokemon
+* Search for a location or a Pokemon
 * Filter by Time and/or Pokemon
 * Show a detail sheet for a Pokemon-Sighting/Prediction/PokeMob
 
 ## PokeDex
-The PokeDex shows a list of Pokemon including some of their attributes like name, number and rarity. Additionally it enables you to search for pokemon and open a Pokemons PokeDetail page.
+The PokeDex shows a list of Pokemon including some of their attributes like name, number and rarity. Additionally it enables you to search for pokemon and open a Pokemon PokeDetail page.
 
 ## PokeDetail
+
 The PokeDetail page shows all relevant information about a Pokemon, including:
 * Name and number of Pokemon
 * Description, types, weaknesses and strengths
 * Attributes (like weight, flee rate, ...) and evolution
 * Possible attacks
-And additionally a sentiment analysis for the Pokemon. This data is extracted from [Twitter](https://www.twitter.com)
+
+And additionally a sentiment analysis based on data extracted from [Twitter](https://www.twitter.com).
 
 ## About page
 This page provides background information about the project and a list of all the contributors.
