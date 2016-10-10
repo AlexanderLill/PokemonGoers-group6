@@ -113,18 +113,20 @@ Modules can make objects and objects and functions available to the outside by e
 
 # npm - Node's package manager
 
-A package manager or package management system is a tool that automates the the process of installing, updating and removing packages. Packages in Node.js are modules that provide a certain functionality (see the next section about useful npm packages). The default package manager for Node.js "npm" is completely written in JavaScript and is included in every standard installation.
+A package manager is a tool that automates the process of installing, updating and removing packages. The package manager of Node.js is called "npm" and comes with every Node.js installation. A package is a collection of modules that aim to provide a certain functionality. The npm registry, the central repository for Node.js packages, has packages for all kinds of purposes, like web frameworks, utility libraries, etc. Notably npm itself is a package and is fully written in JavaScript. The npm registry has currently more than 300,000 packages, and about 400 new packages get added every day (Source: http://www.modulecounts.com/).
 
-"npm" is controlled using a Command Line Interface. The most basic commands are as follows:
+## Install Command
+"npm" is controlled using a command line interface (CLI). The most important command is `npm install`:
 * __npm install__
-  This looks up all packages defined in the *package.json* and installs those on the current system. Packages are installed into the *node_modules* folder of the current project.
+  This looks up all packages defined in the *package.json* file and installs them and all their dependencies. Packages are installed into the *node_modules* folder of the current project.
 * __npm install <packagename>__
-  This installs the given package for the current project.
+  This installs the specified package and all its dependencies into the current project.
 * __npm install -s <packagename>__
-  This installs the given package for the current project and adds this package to the *package.json* file.
-* __npm install -g <packagename>__ installs a package globally, using a system-wide destination directory for the module. This is used for packages that will be used on the Command Line (e.g. *gulp <task> <othertask>*). `//TODO: Explain this more?`
+  This installs the specified package into the current project and adds it to the *package.json* file.
+* __npm install -g <packagename>__ installs a package globally into a system-wide destination. Use this for packages that should accessible on the Command Line (e.g. *gulp <task> <othertask>*).
 
-npm is also widely used for automating reoccuring tasks. This can be accomplished by defining so called "scripts" in the *package.json* file. The following shows an example definition of skripts for the *start* and *test* commands:
+## npm Scripts
+npm is also widely used for automating recurring tasks. This can be accomplished by defining so called "scripts" in the *package.json* file. The following shows an example definition of scripts for the *start* and *test* commands:
 ```JS
 { ...,
   "scripts": {
@@ -134,9 +136,11 @@ npm is also widely used for automating reoccuring tasks. This can be accomplishe
 }
 ```
 
-Those pre-defined scripts can then be executed using `npm start` and `npm test`. This section can also be extended with other scripts, which can be run with `npm run-script scriptname`. Many more commands can be found on the  [project website](https://docs.npmjs.com/cli/npm).
+These scripts can then be executed using `npm start` and `npm test`. [npm's website](https://docs.npmjs.com/cli/npm) documents all standardized script hooks. It is also possible to define arbitrarily named scripts which can be called by running `npm run-script <scriptname>`.
 
-"npm" currently has more than 300,000 packages, and about 400 new packages get added every day (Source: http://www.modulecounts.com/)
+## Other Commands
+
+Besides the afore mentioned commands, npm has a plethora of other commands, like `npm init`, `npm update`, `npm prune` and `npm publish`. For more information on those visit [npm's website](https://docs.npmjs.com/cli/npm).
 
 # Excellent ES2015 support in Node.js
 
