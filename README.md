@@ -331,59 +331,59 @@ To conclude let it be said that it is most beneficial to create tests parallel t
 
 **Testing**
 
-  As already seen there are some testing packages like:
-  - `mocha chai`
-  - `jasmine-node`
+- `mocha` in conjunction with `chai`
+- `jasmine-node`
 
 **Style checking**
 
-  For style checking you can use linter. Linter are tools that flags suspicious language using. By adding rules they ensure a consistent code styling in big projects. Example packages are:
-  - `standard` (without semicolons)
-  - `semistandard` (with semicolons)
+Linters are tools for enforcing a code style rules. The following packages enforce common code style rules:
+- `standard` (without semicolons)
+- `semistandard` (with semicolons)
 
 **Utilities**
 
-  Reinventing the wheel isn't necessary by using:
-  - `lodash` for various utility functions
-  - `request` to perform HTTP requests
-  - `fs-promise` Node's `fs` module promisified
+Reinventing the wheel isn't necessary by using:
+- `lodash` for various utility functions
+- `request` to perform HTTP requests
+- `fs-promise` Node's `fs` module promisified
 
 **Read and Write Excel files**
 
-  Automating the exchange between an Excel file and a database is possible with the `xlsx` package. A simple example:
+Import your Excel files and manipulate their data using JavaScript:
 
-  ```JS
-  const XLSX = require('xlsx')
-  const workbook = XLSX.readFile('test.xlsx')
-  ...
-  ```
+```JS
+const XLSX = require('xlsx')
+const workbook = XLSX.readFile('test.xlsx')
+...
+```
 
 **Web Framework**
 
-  One of the most used packages for creating a server in node is `express`. With only three lines of code you can create your own server:
+One of the most used packages for creating server applications is `express`. With only three lines of code you can create and start your own server:
 
-  ```JS
-  const express = require('express');
-  const app = express();
-  app.listen(3000);
-  ```
+```JS
+const express = require('express')
+const app = express()
+app.listen(3000)
+```
 
 **Build Tools**
 
-  These packages are made for transpiling, concatenating, minimizing, linting and obfuscating the code of projects:
-  - `grunt`
-  - `gulp`
-  - `broccoli`
+These packages let you define tasks for all your frontend development needs like transpiling, concatenating, minimizing, linting and obfuscation:
+
+- `grunt`
+- `gulp`
+- `broccoli`
 
 **Databases**
 
-  Simple solutions for using databases are provided by:
-  - `mongoose` (MongoDB)
-  - `bookshelf` (PostgreSQL, MySQL, SQLite3)
+Simple solutions for using databases are provided by:
+- `mongoose` (MongoDB)
+- `bookshelf` (PostgreSQL, MySQL, SQLite3)
 
 **And many more**
 
-  NPM has currently over 320,000 packages and over 400 are added every day.
+NPM has currently over 320,000 packages and over 400 are added every day.
 
 # Project
 
