@@ -431,7 +431,7 @@ And additionally a sentiment analysis based on data extracted from [Twitter](htt
 ## About page
 This page provides background information about the project and a list of all the contributors.
 
-![PokeDex about page](pictures/screens/pokedex-about-page.png)
+![About page](pictures/screens/about-page.png)
 
 ## Imprint & Disclaimer
 This page shows legal information about the project.
