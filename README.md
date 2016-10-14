@@ -213,7 +213,7 @@ class Student extends Person {
 }
 ```
 
-ES2015 introduces a new syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactical way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypical inheritance system that JavaScript always had.
+ES2015 introduces a new syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactical way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
 
 
 ### Promises
