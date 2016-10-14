@@ -123,7 +123,7 @@ A package manager is a tool that automates the process of installing, updating a
   This installs the specified package and all its dependencies into the current project.
 * __npm install -s <packagename>__
   This installs the specified package into the current project and adds it to the *package.json* file.
-* __npm install -g <packagename>__ installs a package globally into a system-wide destination. Use this for packages that should accessible on the Command Line (e.g. *gulp <task> <othertask>*).
+* __npm install -g <packagename>__ installs a package globally into a system-wide destination. Use this for packages that should be accessible on the Command Line (e.g. *gulp <task> <othertask>*).
 
 ## npm Scripts
 npm is also widely used for automating recurring tasks. This can be accomplished by defining so called "scripts" in the *package.json* file. The following shows an example definition of scripts for the *start* and *test* commands:
@@ -394,7 +394,7 @@ The website consists of the following basic parts which will be explained in the
 * **Sidebar** for navigating through the app
 * **PokeMap** shows the map with sightings, predictions and mobs
 * **PokeDex** lists an overview of all Pokemon
-* **PokeDetail** providing all detailed information about a Pokemon
+* **PokeDetail** providing detailed information about a Pokemon
 * **About page**
 * **Imprint & Disclaimer**
 
