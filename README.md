@@ -65,7 +65,7 @@ A big server application can contain a lot of code. Having only a few, but very 
 
 The module format used by Node.js is called "CommonJS". This section first goes into the history of CommonJS and then how it can be used.
 
-## Histroy
+## History
 
 **January 2009**
 
@@ -140,7 +140,7 @@ These scripts can then be executed using `npm start` and `npm test`. [npm's webs
 
 ## Other Commands
 
-Besides the afore mentioned commands, npm has a plethora of other commands, like `npm init`, `npm update`, `npm prune` and `npm publish`. For more information on those visit [npm's website](https://docs.npmjs.com/cli/npm).
+Besides the aforementioned commands, npm has a plethora of other commands, like `npm init`, `npm update`, `npm prune` and `npm publish`. For more information on those visit [npm's website](https://docs.npmjs.com/cli/npm).
 
 # Excellent ES2015 support in Node.js
 
@@ -152,7 +152,7 @@ The objective of this section is to highlight the good support for modern JavaSc
 
 ## 7 useful ES2015 features
 
-In the following persents 7 useful ES2015 features for Node.js development.
+In the following 7 useful ES2015 features for Node.js development are presented.
 
 ### Property Shorthand
 
@@ -213,7 +213,7 @@ class Student extends Person {
 }
 ```
 
-ES2015 introduces a new syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactical way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypal inheritance system that JavaScript always had.
+ES2015 introduces a new syntax for defining classes. It should be noted that the new class syntax is just an alternative syntactical way for defining classes in JavaScript. Under the hood ES2015 classes work with the same prototypical inheritance system that JavaScript always had.
 
 
 ### Promises
