@@ -401,14 +401,20 @@ The website consists of the following basic parts which will be explained in the
 ## Sidebar
 The sidebar enables navigating through the app by providing links to the **PokeMap**, the **PokeDex**, the **About page** and the **Imprint & Disclaimer** page.
 
+![Sidebar](pictures/screens/sidebar.png)
+
 ## PokeMap
 The PokeMap is screen showing a map with current Pokemon sightings, Pokemon predictions and PokeMobs. Additionally you can:
 * Search for a location or a Pokemon
 * Filter by Time and/or Pokemon
 * Show a detail sheet for a Pokemon-Sighting/Prediction/PokeMob
 
+![Map page](pictures/screens/map-page.png)
+
 ## PokeDex
 The PokeDex shows a list of Pokemon including some of their attributes like name, number and rarity. Additionally it enables you to search for pokemon and open a Pokemon PokeDetail page.
+
+![PokeDex index page](pictures/screens/pokedex-index-page.png)
 
 ## PokeDetail
 
@@ -420,8 +426,12 @@ The PokeDetail page shows all relevant information about a Pokemon, including:
 
 And additionally a sentiment analysis based on data extracted from [Twitter](https://www.twitter.com).
 
+![PokeDex detail page](pictures/screens/pokedex-detail-page.png)
+
 ## About page
 This page provides background information about the project and a list of all the contributors.
+
+![PokeDex about page](pictures/screens/pokedex-about-page.png)
 
 ## Imprint & Disclaimer
 This page shows legal information about the project.
